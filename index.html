@@ -3,29 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Theme</title>
+    <meta name="description" content="Generate unique dog names based on gender, personality, theme, and interests using AI and manual options. Perfect for pet owners looking for creative names!">
+    <meta name="title" content="Pet Name Generator - Find the Perfect Dog Name">
+    <!-- Featured image (replace with your image URL or path) -->
+    <meta property="og:image" content="images/featured-dog.jpg">
+    <meta property="og:title" content="Pet Name Generator">
+    <meta property="og:description" content="Generate unique dog names with our AI-powered tool. Choose gender, category, and get creative names instantly!">
+    <title>Pet Name Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <button>Home</button>
-            <button>About Us</button>
-            <button>Privacy Policy</button>
+    <!-- Site Header with Light Green Gradient -->
+    <header class="site-header slide-left">
+        <div class="logo-container">
+            <a href="index.html"><img src="images/logo.png" alt="Pet Name Generator Site Logo" class="logo" loading="lazy"></a>
+        </div>
+        <nav class="nav-buttons">
+            <button class="nav-button" onclick="window.location.href='index.html'">Home</button>
+            <button class="nav-button" onclick="window.location.href='about-us.html'">About Us</button>
+            <button class="nav-button" onclick="window.location.href='privacy-policy.html'">Privacy Policy</button>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <p>This is a blank white page.</p>
-    </main>
+    <!-- Main Content: Pet Name Generator -->
+    <div class="pet-name-generator-container">
+        <!-- Choose Gender -->
+        <div class="section">
+            <h2 class="gender-heading">Choose Gender</h2>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="gender" value="male" checked> Male
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="gender" value="female"> Female
+                </label>
+            </div>
+        </div>
 
-    <!-- Footer -->
-    <footer>
-        <a href="https://example.com">Website 1</a>
-        <a href="https://example.com">Website 2</a>
-        <a href="https://example.com">Website 3</a>
-    </footer>
+        <!-- Choose Category -->
+        <div class="section">
+            <h2 style="color: #FF9800; text-align: center;">Choose Category</h2>
+            <p style="text-align: center;">(Select one category then click the button to generate a dog name)</p>
+
+            <!-- Personality -->
+            <div class="category-group">
+                <h3 style="color: #FF9800; text-align: center;">Personality 🐶</h3>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Friendly"> Friendly 😊
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Tough"> Tough 💪
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Elegant"> Elegant ✨
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Funny"> Funny 😂
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Sporty"> Sporty ⚽
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Cute"> Cute 🥰
+                    </label>
+                </div>
+            </div>
+
+            <!-- Theme -->
+            <div class="category-group">
+                <h3 style="color: #9C27B0; text-align: center;">Theme 🎥</h3>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="International"> International 🌍
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Classic"> Classic 🏛
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Movies"> Movies 🎬
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Books"> Books 📚
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Comics"> Comics 🦸
+                    </label>
+                </div>
+            </div>
+
+            <!-- Interest -->
+            <div class="category-group">
+                <h3 style="color: #3F51B5; text-align: center;">Interest 🎸</h3>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Geeky"> Geeky 🤓
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Music"> Music 🎵
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Historic"> Historic 🏰
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="TV"> TV 📺
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Sports"> Sports 🏅
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Generate Button -->
+        <div class="submit-button-container">
+            <button id="generate-name-button" class="generate-button male">Find me a random dog name!</button>
+        </div>
+
+        <!-- Results -->
+        <div id="pet-name-result" class="pet-name-result" style="display: none;">
+            <h2 class="result-heading">Your Dog Name:</h2>
+            <p id="pet-name-output" class="pet-name-text male"></p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
