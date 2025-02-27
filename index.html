@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Name Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="pet-name-generator-container">
+        <!-- Logo (static example) -->
+        <div class="logo-container">
+            <img src="https://via.placeholder.com/150" alt="Pet Name Generator Logo" class="ui-logo">
+        </div>
+
+        <!-- UI Title -->
+        <h1 class="ui-title">Pet Name Generator</h1>
+
+        <!-- Static Categories -->
+        <div class="static-categories-container">
+            <h2 class="static-categories-title">Choose a Category</h2>
+            <div class="static-categories-scrollable">
+                <label class="category-label">
+                    <input type="radio" name="static_category" value="1"> Cute
+                </label>
+                <label class="category-label">
+                    <input type="radio" name="static_category" value="2"> Cool
+                </label>
+                <label class="category-label">
+                    <input type="radio" name="static_category" value="3"> Unique
+                </label>
+            </div>
+        </div>
+
+        <!-- Dynamic Fields -->
+        <div class="dynamic-fields-container">
+            <div class="dynamic-field-container">
+                <h4 class="dynamic-field-title">Additional Filters</h4>
+                <div class="dynamic-categories-scrollable">
+                    <label class="category-label">
+                        <input type="checkbox" name="dynamic_category" value="4"> Small Pets
+                    </label>
+                    <label class="category-label">
+                        <input type="checkbox" name="dynamic_category" value="5"> Big Pets
+                    </label>
+                    <label class="category-label">
+                        <input type="checkbox" name="dynamic_category" value="6"> Exotic
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="submit-button-container">
+            <button id="fetch-names-button" class="fetch-names-button">Fetch Names</button>
+            <button id="generate-ai-names-button" class="fetch-names-button ai-button">Generate AI Names</button>
+        </div>
+
+        <!-- Results -->
+        <div id="pet-names-container" class="pet-names-container" style="display: none;">
+            <h2 id="pet-names-title"></h2>
+            <div id="pet-names-grid" class="pet-names-grid"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
