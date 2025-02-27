@@ -8,58 +8,103 @@
 </head>
 <body>
     <div class="pet-name-generator-container">
-        <!-- Logo (static example) -->
-        <div class="logo-container">
-            <img src="https://via.placeholder.com/150" alt="Pet Name Generator Logo" class="ui-logo">
-        </div>
-
-        <!-- UI Title -->
-        <h1 class="ui-title">Pet Name Generator</h1>
-
-        <!-- Static Categories -->
-        <div class="static-categories-container">
-            <h2 class="static-categories-title">Choose a Category</h2>
-            <div class="static-categories-scrollable">
-                <label class="category-label">
-                    <input type="radio" name="static_category" value="1"> Cute
+        <!-- Choose Gender -->
+        <div class="section">
+            <h2 style="color: #4CAF50;">Choose Gender</h2>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="gender" value="male" checked> Male
                 </label>
-                <label class="category-label">
-                    <input type="radio" name="static_category" value="2"> Cool
-                </label>
-                <label class="category-label">
-                    <input type="radio" name="static_category" value="3"> Unique
+                <label class="radio-label">
+                    <input type="radio" name="gender" value="female"> Female
                 </label>
             </div>
         </div>
 
-        <!-- Dynamic Fields -->
-        <div class="dynamic-fields-container">
-            <div class="dynamic-field-container">
-                <h4 class="dynamic-field-title">Additional Filters</h4>
-                <div class="dynamic-categories-scrollable">
-                    <label class="category-label">
-                        <input type="checkbox" name="dynamic_category" value="4"> Small Pets
+        <!-- Choose Category -->
+        <div class="section">
+            <h2 style="color: #FF9800;">Choose Category</h2>
+            <p>(Select one category then click the button to generate a dog name)</p>
+
+            <!-- Personality -->
+            <div class="category-group">
+                <h3 style="color: #FF9800;">Personality 🐶</h3>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Friendly"> Friendly 😊
                     </label>
-                    <label class="category-label">
-                        <input type="checkbox" name="dynamic_category" value="5"> Big Pets
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Tough"> Tough 💪
                     </label>
-                    <label class="category-label">
-                        <input type="checkbox" name="dynamic_category" value="6"> Exotic
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Elegant"> Elegant ✨
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Funny"> Funny 😂
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Sporty"> Sporty ⚽
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Cute"> Cute 🥰
+                    </label>
+                </div>
+            </div>
+
+            <!-- Theme -->
+            <div class="category-group">
+                <h3 style="color: #9C27B0;">Theme 🎥</h3>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="International"> International 🌍
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Classic"> Classic 🏛
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Movies"> Movies 🎬
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Books"> Books 📚
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Comics"> Comics 🦸
+                    </label>
+                </div>
+            </div>
+
+            <!-- Interest -->
+            <div class="category-group">
+                <h3 style="color: #3F51B5;">Interest 🎸</h3>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Geeky"> Geeky 🤓
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Music"> Music 🎵
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Historic"> Historic 🏰
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="TV"> TV 📺
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="category" value="Sports"> Sports 🏅
                     </label>
                 </div>
             </div>
         </div>
 
-        <!-- Buttons -->
+        <!-- Generate Button -->
         <div class="submit-button-container">
-            <button id="fetch-names-button" class="fetch-names-button">Fetch Names</button>
-            <button id="generate-ai-names-button" class="fetch-names-button ai-button">Generate AI Names</button>
+            <button id="generate-name-button" class="generate-button">Find me a random dog name!</button>
         </div>
 
         <!-- Results -->
-        <div id="pet-names-container" class="pet-names-container" style="display: none;">
-            <h2 id="pet-names-title"></h2>
-            <div id="pet-names-grid" class="pet-names-grid"></div>
+        <div id="pet-name-result" class="pet-name-result" style="display: none;">
+            <h2>Your Dog Name:</h2>
+            <p id="pet-name-output"></p>
         </div>
     </div>
 
