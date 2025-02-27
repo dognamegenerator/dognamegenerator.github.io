@@ -9,7 +9,7 @@ body {
 .site-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Center the entire header content */
     padding: 20px 40px;
     background: linear-gradient(135deg, #e0f7e9, #c8e6c9); /* Light green gradient */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -17,33 +17,44 @@ body {
     border-radius: 0 0 15px 15px;
 }
 
-.logo-container { flex: 0 0 auto; }
-.logo { max-width: 250px; height: auto; border-radius: 10px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); }
+.logo-container { 
+    flex: 0 0 auto; 
+    padding: 10px; /* Adjustable padding */
+}
+.logo { 
+    max-width: 200px; /* Slightly shorter logo */
+    height: 80px; /* Adjustable height */
+    width: auto; /* Maintain aspect ratio */
+    border-radius: 10px; 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+.logo:hover { transform: scale(1.05); } /* Slight zoom on hover for interactivity */
 
 .nav-buttons {
     display: flex;
     gap: 20px;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Center the buttons within nav */
     flex: 1;
 }
 
 .nav-button {
     padding: 10px 25px;
-    background: linear-gradient(45deg, #4CAF50, #388E3C); /* Green buttons to match plugin theme */
+    background: linear-gradient(45deg, #03A9F4, #0288D1); /* Light blue buttons */
     color: white;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 5px 15px rgba(3, 169, 244, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 .nav-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.5);
-    background: linear-gradient(45deg, #45a049, #2E7D32);
+    box-shadow: 0 8px 20px rgba(3, 169, 244, 0.5);
+    background: linear-gradient(45deg, #0288D1, #01579B); /* Darker blue on hover */
 }
 
 /* Pet Name Generator Container (Main Content) */
@@ -232,7 +243,7 @@ body {
         padding: 15px;
     }
     .site-header { padding: 15px 20px; }
-    .logo { max-width: 200px; }
+    .logo { max-width: 150px; height: 60px; } /* Smaller on mobile */
     .nav-button { 
         padding: 8px 15px;
         font-size: 14px;
