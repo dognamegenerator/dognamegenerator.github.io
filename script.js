@@ -2,14 +2,14 @@ $(document).ready(function() {
     // Replace with your OpenAI API key (client-side for demo; use server-side in production)
     const openaiApiKey = "YOUR_OPENAI_API_KEY_HERE";
 
-    // Handle gender selection for dynamic colors
+    // Handle gender selection for dynamic heading color (no border changes)
     $('input[name="gender"]').on('change', function() {
         const gender = $(this).val();
         $('.pet-name-generator-container').removeClass('male-selected female-selected');
         if (gender === 'male') {
-            $('.pet-name-generator-container').addClass('male-selected');
+            $('.gender-heading').css('color', '#2196F3');
         } else if (gender === 'female') {
-            $('.pet-name-generator-container').addClass('female-selected');
+            $('.gender-heading').css('color', '#E91E63');
         }
     });
 
