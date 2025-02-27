@@ -1,48 +1,119 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f7f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 .pet-name-generator-container {
     max-width: 500px;
+    width: 90%;
     margin: 20px auto;
     padding: 20px;
-    border: 2px solid #4CAF50;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid #4CAF50; /* Default green border */
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff, #e8f5e9);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .section { margin-bottom: 20px; }
-.section h2 { margin-bottom: 10px; }
+.section h2, .category-group h3 { margin-bottom: 10px; font-weight: bold; }
+
+.gender-heading { margin-bottom: 10px; transition: color 0.3s ease; }
+
 .section p { font-size: 0.9em; color: #666; margin-bottom: 10px; }
 
 .category-group { margin-bottom: 15px; }
 .category-group h3 { margin-bottom: 10px; }
 
-.radio-group { display: flex; flex-direction: column; gap: 5px; }
+.radio-group { display: flex; flex-direction: column; gap: 8px; }
 .radio-label { 
-    padding: 8px;
-    background-color: white;
-    border-radius: 5px;
+    padding: 10px 15px;
+    background: #fff;
+    border-radius: 8px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.radio-label input[type="radio"] { margin-right: 5px; }
+.radio-label:hover { background-color: #f5f5f5; transform: translateY(-2px); }
+.radio-label input[type="radio"] { margin-right: 8px; }
 
-.submit-button-container { margin-top: 20px; }
+.submit-button-container { margin-top: 25px; text-align: center; }
 .generate-button {
     padding: 12px 30px;
-    background-color: #4CAF50;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.generate-button:hover { background-color: #45a049; }
+.generate-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.6);
+}
 
 .pet-name-result {
     margin-top: 20px;
     padding: 15px;
-    border: 1px solid #4CAF50;
-    border-radius: 5px;
-    background-color: white;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
 }
-.pet-name-result h2 { color: #4CAF50; margin-bottom: 10px; }
-.pet-name-result p { font-size: 1.2em; font-weight: bold; color: #333; }
+.pet-name-result h2 { 
+    color: #4CAF50; 
+    margin-bottom: 10px; 
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.pet-name-result p { 
+    font-size: 1.5em; 
+    font-weight: bold; 
+    color: #333; 
+    text-align: center;
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Desktop Centering */
+@media (min-width: 768px) {
+    .pet-name-generator-container { 
+        width: 500px;
+        margin: 20px auto;
+    }
+}
+
+/* Mobile Optimization */
+@media (max-width: 767px) {
+    .pet-name-generator-container {
+        width: 85%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+    .radio-label { padding: 8px 12px; font-size: 0.9em; }
+    .generate-button { 
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+    .pet-name-result p { font-size: 1.2em; }
+}
+
+/* Dynamic Colors for Gender */
+.male-selected .pet-name-generator-container { border-color: #2196F3; }
+.male-selected .gender-heading { color: #2196F3; }
+.female-selected .pet-name-generator-container { border-color: #E91E63; }
+.female-selected .gender-heading { color: #E91E63; }
