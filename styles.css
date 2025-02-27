@@ -102,7 +102,7 @@ body {
     font-size: 20px;
     font-weight: bold;
     box-shadow: 0 10px 25px rgba(76, 175, 80, 0.5), 0 0 15px rgba(76, 175, 80, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
     position: relative;
     overflow: hidden;
 }
@@ -118,10 +118,23 @@ body {
     transition: opacity 0.3s ease;
 }
 .generate-button:hover::after { opacity: 1; }
-.generate-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(76, 175, 80, 0.7), 0 0 20px rgba(76, 175, 80, 0.4);
-    background: linear-gradient(45deg, #45a049, #2E7D32);
+
+/* Dynamic Colors for Button and Hover Based on Gender */
+.male-selected .generate-button {
+    background: linear-gradient(45deg, #2196F3, #1976D2);
+    color: white;
+}
+.male-selected .generate-button:hover {
+    background: linear-gradient(45deg, #1976D2, #1565C0);
+    box-shadow: 0 15px 30px rgba(33, 150, 243, 0.7), 0 0 20px rgba(33, 150, 243, 0.4);
+}
+.female-selected .generate-button {
+    background: linear-gradient(45deg, #E91E63, #D81B60);
+    color: white;
+}
+.female-selected .generate-button:hover {
+    background: linear-gradient(45deg, #D81B60, #C2185B);
+    box-shadow: 0 15px 30px rgba(233, 30, 99, 0.7), 0 0 20px rgba(233, 30, 99, 0.4);
 }
 
 .pet-name-result {
@@ -141,15 +154,19 @@ body {
     font-size: 1.3em;
     text-align: center;
 }
-.pet-name-result p { 
+
+/* Dynamic Colors for Name Output Text Based on Gender */
+.pet-name-text.male { color: #2196F3; }
+.pet-name-text.female { color: #E91E63; }
+.pet-name-text {
     font-size: 2em; 
     font-weight: bold; 
-    color: #2E7D32; 
     text-align: center;
     background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
     padding: 20px;
     border-radius: 15px;
     box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: color 0.5s ease;
     animation: bounceIn 0.5s ease-out;
 }
 
@@ -179,7 +196,7 @@ body {
         padding: 12px 35px;
         font-size: 16px;
     }
-    .pet-name-result p { font-size: 1.5em; }
+    .pet-name-text { font-size: 1.5em; }
     .pet-name-result { padding: 15px; }
 }
 
