@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #e0f7e9, #c8e6c9); /* Light green gradient from screenshot */
+    background: linear-gradient(135deg, #f0f8f6, #d1e8dd); /* Beautiful soft mint gradient for the page */
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -11,7 +11,7 @@ body {
     align-items: center;
     justify-content: flex-start; /* Slide menu slightly left */
     padding: 20px 40px;
-    background: linear-gradient(135deg, #e0f7e9, #c8e6c9); /* Light green gradient */
+    background: linear-gradient(135deg, #a7d7c5, #84c1a0); /* Beautiful vibrant green gradient for header */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     border-radius: 0 0 15px 15px;
@@ -117,7 +117,7 @@ body {
     margin-bottom: 20px; 
     transition: color 0.5s ease;
     font-size: 1.5em;
-    color: #2196F3; /* Blue for "Choose Gender" to match previous theme */
+    color: #2196F3; /* Blue for "Choose Gender" */
 }
 
 .section p { 
@@ -316,6 +316,7 @@ body {
     width: 90%;
     margin: 0 auto;
     padding: 20px;
+    background: linear-gradient(135deg, #f0f8f6, #d1e8dd); /* Match page background for consistency */
 }
 
 .article-content {
