@@ -33,28 +33,45 @@ body {
 
 .nav-buttons {
     display: flex;
-    gap: 20px;
+    gap: 25px; /* Increased gap for better spacing */
     align-items: center;
     justify-content: center; /* Center the buttons within nav */
     flex: 1;
 }
 
 .nav-button {
-    padding: 10px 25px;
-    background: linear-gradient(45deg, #03A9F4, #0288D1); /* Light blue buttons */
+    padding: 12px 30px; /* Slightly larger padding for beauty */
+    background: linear-gradient(45deg, #4FC3F7, #03A9F4); /* Beautiful light blue gradient */
     color: white;
     border: none;
-    border-radius: 20px;
+    border-radius: 25px; /* More rounded for beauty */
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    box-shadow: 0 5px 15px rgba(3, 169, 244, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0 8px 20px rgba(79, 195, 247, 0.4), 0 0 12px rgba(79, 195, 247, 0.2); /* Enhanced shadow for beauty */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase; /* Uppercase for elegance */
+    letter-spacing: 1px; /* Slight letter spacing for style */
 }
+.nav-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.nav-button:hover::after { opacity: 1; }
 .nav-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(3, 169, 244, 0.5);
-    background: linear-gradient(45deg, #0288D1, #01579B); /* Darker blue on hover */
+    transform: translateY(-4px); /* More pronounced lift for beauty */
+    box-shadow: 0 12px 25px rgba(79, 195, 247, 0.6), 0 0 15px rgba(79, 195, 247, 0.3);
+    background: linear-gradient(45deg, #03A9F4, #0288D1); /* Darker blue on hover */
+    color: #ffffff; /* Ensure text remains white on hover */
 }
 
 /* Pet Name Generator Container (Main Content) */
@@ -62,64 +79,73 @@ body {
     max-width: 700px; /* Wider UI */
     width: 90%;
     margin: 0 auto 20px;
-    padding: 30px;
-    border-radius: 25px;
-    background: linear-gradient(135deg, #ffffff, #f5fff5);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 15px rgba(76, 175, 80, 0.3);
-    transition: box-shadow 0.5s ease, transform 0.3s ease;
+    padding: 20px;
+    background: transparent; /* Remove background to match screenshot */
+    box-shadow: none; /* Remove shadow to match screenshot */
     overflow: hidden;
     text-align: center; /* Center all text */
 }
 
-.pet-name-generator-container:hover {
-    transform: scale(1.02);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2), 0 0 20px rgba(76, 175, 80, 0.4);
+/* Card Styles for Sections */
+.card, .category-card {
+    background: #ffffff;
+    border-radius: 20px; /* Rounded corners like screenshot */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover, .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
 
-.section { margin-bottom: 30px; }
+.section { margin-bottom: 0; } /* Remove default margin to fit cards */
 .section h2, .category-group h3 { 
-    margin-bottom: 20px; 
+    margin-bottom: 15px; 
     font-weight: 600; 
     text-transform: uppercase; 
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 .gender-heading { 
-    margin-bottom: 20px; 
+    margin-bottom: 15px; 
     transition: color 0.5s ease;
     font-size: 1.5em;
+    color: #2196F3; /* Blue for "Choose Gender" to match screenshot */
 }
 
 .section p { 
-    font-size: 1em; 
+    font-size: 0.9em; 
     color: #666; 
-    margin-bottom: 20px; 
+    margin-bottom: 15px; 
     font-style: italic;
 }
 
-.category-group { margin-bottom: 25px; }
-.category-group h3 { margin-bottom: 20px; }
+.category-group { margin-bottom: 0; }
+.category-group h3 { margin-bottom: 15px; }
 
 .radio-group { 
     display: flex; 
     flex-direction: column; 
-    gap: 15px; 
+    gap: 10px; 
     align-items: center; 
 }
 .radio-label { 
-    padding: 15px 25px;
-    background: #fff;
-    border-radius: 15px;
+    padding: 12px 20px;
+    background: #ffffff;
+    border-radius: 15px; /* Rounded corners like screenshot */
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    width: 90%; /* Ensure labels are wide and centered */
+    width: 100%; /* Full width within card */
     max-width: 400px;
     overflow: hidden;
+    border: 2px solid #e0e0e0; /* Light gray border for contrast */
 }
 .radio-label::after {
     content: '';
@@ -135,22 +161,22 @@ body {
 .radio-label:hover::after { opacity: 1; }
 .radio-label:hover { 
     background-color: #f5fff5; 
-    transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
-.radio-label input[type="radio"] { margin-right: 15px; }
+.radio-label input[type="radio"] { margin-right: 10px; }
 
-.submit-button-container { margin-top: 35px; text-align: center; }
+.submit-button-container { margin-top: 20px; text-align: center; }
 .generate-button {
-    padding: 16px 50px;
+    padding: 14px 40px;
     background: linear-gradient(45deg, #4CAF50, #388E3C);
     color: white;
     border: none;
-    border-radius: 35px;
+    border-radius: 25px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.5), 0 0 15px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4), 0 0 10px rgba(76, 175, 80, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -162,14 +188,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 .generate-button:hover::after { opacity: 1; }
 .generate-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(76, 175, 80, 0.7), 0 0 20px rgba(76, 175, 80, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(76, 175, 80, 0.6), 0 0 15px rgba(76, 175, 80, 0.3);
+    background: linear-gradient(45deg, #45a049, #2E7D32);
 }
 
 /* Dynamic Colors for Button and Hover Based on Gender */
@@ -178,22 +205,22 @@ body {
 }
 .male .generate-button:hover {
     background: linear-gradient(45deg, #1976D2, #1565C0);
-    box-shadow: 0 15px 30px rgba(33, 150, 243, 0.7), 0 0 20px rgba(33, 150, 243, 0.4);
+    box-shadow: 0 12px 25px rgba(33, 150, 243, 0.6), 0 0 15px rgba(33, 150, 243, 0.3);
 }
 .female .generate-button {
     background: linear-gradient(45deg, #E91E63, #D81B60);
 }
 .female .generate-button:hover {
     background: linear-gradient(45deg, #D81B60, #C2185B);
-    box-shadow: 0 15px 30px rgba(233, 30, 99, 0.7), 0 0 20px rgba(233, 30, 99, 0.4);
+    box-shadow: 0 12px 25px rgba(233, 30, 99, 0.6), 0 0 15px rgba(233, 30, 99, 0.3);
 }
 
 .pet-name-result {
-    margin-top: 30px;
-    padding: 25px;
+    margin-top: 20px;
+    padding: 20px;
     border-radius: 20px;
     background: linear-gradient(135deg, #fff, #f5fff5);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 0 15px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 0 10px rgba(76, 175, 80, 0.2);
     transition: box-shadow 0.5s ease, background 0.5s ease;
     animation: fadeIn 0.5s ease-in;
 }
@@ -216,10 +243,10 @@ body {
 .pet-name-text.male { color: #1565C0; } /* Intense blue */
 .pet-name-text.female { color: #C2185B; } /* Intense pink */
 .pet-name-text {
-    font-size: 2em; 
+    font-size: 1.8em; 
     font-weight: bold; 
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
     box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1);
     transition: color 0.5s ease;
@@ -245,9 +272,10 @@ body {
     .site-header { padding: 15px 20px; }
     .logo { max-width: 150px; height: 60px; } /* Smaller on mobile */
     .nav-button { 
-        padding: 8px 15px;
+        padding: 8px 20px;
         font-size: 14px;
     }
+    .card, .category-card { padding: 15px; }
     .radio-label { 
         padding: 10px 15px; 
         font-size: 0.9em;
