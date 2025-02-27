@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f0f8f6, #d1e8dd); /* Beautiful soft mint gradient for the page */
+    background: linear-gradient(135deg, #e1f5fe, #b3e5fc); /* Light blue theme for the page */
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -9,23 +9,23 @@ body {
 .site-header {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Slide menu slightly left */
+    justify-content: center; /* Center the header content to match plugin style */
     padding: 20px 40px;
-    background: linear-gradient(135deg, #a7d7c5, #84c1a0); /* Beautiful vibrant green gradient for header */
+    background: #b3e5fc; /* Solid light blue for header */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     border-radius: 0 0 15px 15px;
     transition: transform 0.3s ease; /* Smooth sliding transition */
 }
 
-/* Allow adjustment of sliding position in CSS */
-.site-header.slide-left {
-    transform: translateX(-50px); /* Slide 50px left by default; adjust this value as needed */
+/* Slide header slightly right */
+.site-header.slide-right {
+    transform: translateX(50px); /* Slide 50px right by default; adjust this value as needed */
 }
 
 /* Optional: Add a hover effect or class to toggle sliding */
 .site-header:hover {
-    transform: translateX(-50px); /* Slide on hover, if desired */
+    transform: translateX(50px); /* Slide on hover, if desired */
 }
 
 .logo-container { 
@@ -46,21 +46,20 @@ body {
     display: flex;
     gap: 25px; /* Increased gap for better spacing */
     align-items: center;
-    justify-content: center; /* Center the buttons within nav */
+    justify-content: center; /* Center the buttons within nav to match plugin */
     flex: 1;
-    margin-left: 20px; /* Additional left margin to slide buttons left */
 }
 
 .nav-button {
-    padding: 12px 30px; /* Slightly larger padding for beauty */
-    background: linear-gradient(45deg, #4FC3F7, #03A9F4); /* Beautiful light blue gradient */
-    color: white;
-    border: none;
-    border-radius: 25px; /* More rounded for beauty */
+    padding: 12px 30px; /* Rectangular shape with larger padding */
+    background: #ffffff; /* White background for buttons, contrasting header */
+    color: #03A9F4; /* Light blue text to match header theme */
+    border: 2px solid #03A9F4; /* Light blue border for definition */
+    border-radius: 5px; /* Slight rounding for rectangular shape */
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    box-shadow: 0 8px 20px rgba(79, 195, 247, 0.4), 0 0 12px rgba(79, 195, 247, 0.2); /* Enhanced shadow for beauty */
+    box-shadow: 0 4px 12px rgba(3, 169, 244, 0.2); /* Subtle shadow for beauty */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -74,16 +73,16 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(3, 169, 244, 0.1); /* Light blue overlay on hover */
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 .nav-button:hover::after { opacity: 1; }
 .nav-button:hover {
     transform: translateY(-4px); /* More pronounced lift for beauty */
-    box-shadow: 0 12px 25px rgba(79, 195, 247, 0.6), 0 0 15px rgba(79, 195, 247, 0.3);
-    background: linear-gradient(45deg, #03A9F4, #0288D1); /* Darker blue on hover */
-    color: #ffffff; /* Ensure text remains white on hover */
+    box-shadow: 0 8px 18px rgba(3, 169, 244, 0.3);
+    background: #e1f5fe; /* Lighter blue on hover for contrast */
+    color: #0288D1; /* Darker blue text on hover */
 }
 
 /* Pet Name Generator Container (Main Content) */
@@ -274,9 +273,9 @@ body {
     }
     .site-header { 
         padding: 15px 20px; 
-        justify-content: flex-start; /* Maintain left slide on mobile */
+        justify-content: center; /* Center on mobile to match plugin */
     }
-    .site-header.slide-left { transform: translateX(-30px); } /* Adjust sliding for mobile */
+    .site-header.slide-right { transform: translateX(30px); } /* Adjust sliding for mobile */
     .logo { max-width: 150px; height: 60px; } /* Smaller on mobile */
     .nav-button { 
         padding: 8px 20px;
@@ -316,7 +315,7 @@ body {
     width: 90%;
     margin: 0 auto;
     padding: 20px;
-    background: linear-gradient(135deg, #f0f8f6, #d1e8dd); /* Match page background for consistency */
+    background: linear-gradient(135deg, #e1f5fe, #b3e5fc); /* Match page background for consistency */
 }
 
 .article-content {
