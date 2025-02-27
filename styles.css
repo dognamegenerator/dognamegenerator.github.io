@@ -9,23 +9,12 @@ body {
 .site-header {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Slide menu slightly left */
+    justify-content: center; /* Center the entire header content */
     padding: 20px 40px;
     background: linear-gradient(135deg, #e0f7e9, #c8e6c9); /* Light green gradient */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     border-radius: 0 0 15px 15px;
-    transition: transform 0.3s ease; /* Smooth sliding transition */
-}
-
-/* Allow adjustment of sliding position in CSS */
-.site-header.slide-left {
-    transform: translateX(-50px); /* Slide 50px left by default; adjust this value as needed */
-}
-
-/* Optional: Add a hover effect or class to toggle sliding */
-.site-header:hover {
-    transform: translateX(-50px); /* Slide on hover, if desired */
 }
 
 .logo-container { 
@@ -48,7 +37,6 @@ body {
     align-items: center;
     justify-content: center; /* Center the buttons within nav */
     flex: 1;
-    margin-left: 20px; /* Additional left margin to slide buttons left */
 }
 
 .nav-button {
@@ -281,11 +269,7 @@ body {
         margin: 10px auto;
         padding: 15px;
     }
-    .site-header { 
-        padding: 15px 20px; 
-        justify-content: flex-start; /* Maintain left slide on mobile */
-    }
-    .site-header.slide-left { transform: translateX(-30px); } /* Adjust sliding for mobile */
+    .site-header { padding: 15px 20px; }
     .logo { max-width: 150px; height: 60px; } /* Smaller on mobile */
     .nav-button { 
         padding: 8px 20px;
