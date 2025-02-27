@@ -1,6 +1,6 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #e1f5fe, #b3e5fc); /* Light blue theme for the page */
+    background: linear-gradient(135deg, #f5faff, #e3f2fd); /* Soft, elegant light blue gradient for the page */
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -11,11 +11,21 @@ body {
     align-items: center;
     justify-content: center; /* Center the header content to match plugin style */
     padding: 20px 40px;
-    background: #b3e5fc; /* Solid light blue for header */
+    background: #4FC3F7; /* Softer, attractive light blue for header */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     border-radius: 0 0 15px 15px;
-    transition: none; /* Remove sliding transition */
+    transition: transform 0.3s ease; /* Smooth sliding transition */
+}
+
+/* Slide header slightly left */
+.site-header.slide-left {
+    transform: translateX(-50px); /* Slide 50px left by default; adjust this value as needed */
+}
+
+/* Optional: Add a hover effect or class to toggle sliding */
+.site-header:hover {
+    transform: translateX(-50px); /* Slide on hover, if desired */
 }
 
 .logo-container { 
@@ -38,18 +48,19 @@ body {
     align-items: center;
     justify-content: center; /* Center the buttons within nav to match plugin */
     flex: 1;
+    margin-left: 20px; /* Additional left margin to slide buttons left */
 }
 
 .nav-button {
     padding: 12px 30px; /* Rectangular shape with larger padding */
     background: #ffffff; /* White background for buttons, contrasting header */
-    color: #03A9F4; /* Light blue text to match header theme */
-    border: 2px solid #03A9F4; /* Light blue border for definition */
+    color: #0288D1; /* Softer dark blue text for harmony */
+    border: 2px solid #0288D1; /* Softer dark blue border for definition */
     border-radius: 5px; /* Slight rounding for rectangular shape */
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-    box-shadow: 0 4px 12px rgba(3, 169, 244, 0.2); /* Subtle shadow for beauty */
+    box-shadow: 0 4px 12px rgba(2, 136, 209, 0.2); /* Subtle shadow for beauty */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -63,16 +74,16 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(3, 169, 244, 0.1); /* Light blue overlay on hover */
+    background: rgba(2, 136, 209, 0.1); /* Softer dark blue overlay on hover */
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 .nav-button:hover::after { opacity: 1; }
 .nav-button:hover {
     transform: translateY(-4px); /* More pronounced lift for beauty */
-    box-shadow: 0 8px 18px rgba(3, 169, 244, 0.3);
-    background: #e1f5fe; /* Lighter blue on hover for contrast */
-    color: #0288D1; /* Darker blue text on hover */
+    box-shadow: 0 8px 18px rgba(2, 136, 209, 0.3);
+    background: #e3f2fd; /* Lighter blue on hover for contrast */
+    color: #01579B; /* Even darker blue text on hover */
 }
 
 /* Pet Name Generator Container (Main Content) */
@@ -265,6 +276,7 @@ body {
         padding: 15px 20px; 
         justify-content: center; /* Center on mobile to match plugin */
     }
+    .site-header.slide-left { transform: translateX(-30px); } /* Adjust sliding for mobile */
     .logo { max-width: 150px; height: 60px; } /* Smaller on mobile */
     .nav-button { 
         padding: 8px 20px;
@@ -304,7 +316,7 @@ body {
     width: 90%;
     margin: 0 auto;
     padding: 20px;
-    background: linear-gradient(135deg, #e1f5fe, #b3e5fc); /* Match page background for consistency */
+    background: linear-gradient(135deg, #f5faff, #e3f2fd); /* Match page background for consistency */
 }
 
 .article-content {
@@ -337,31 +349,15 @@ body {
     color: #1565C0;
 }
 
-/* Footer Styles */
+/* Footer Styles (Logo Removed) */
 .site-footer {
-    background: #0288D1; /* Darker blue for footer contrast */
+    background: #4FC3F7; /* Softer, attractive light blue for footer to match header */
     color: white;
     padding: 20px 40px;
     text-align: center;
     margin-top: 20px;
     border-radius: 15px 15px 0 0;
     box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.footer-logo-container {
-    margin-bottom: 15px;
-}
-
-.footer-logo {
-    max-width: 150px; /* Adjustable footer logo size */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.footer-logo:hover {
-    transform: scale(1.05); /* Slight zoom on hover for interactivity */
 }
 
 .footer-links {
@@ -380,6 +376,6 @@ body {
 }
 
 .footer-links a:hover {
-    color: #e1f5fe; /* Lighter blue on hover */
+    color: #e3f2fd; /* Lighter blue on hover */
     transform: translateY(-2px); /* Slight lift on hover */
 }
