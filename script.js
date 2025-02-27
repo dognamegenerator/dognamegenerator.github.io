@@ -2,14 +2,18 @@ $(document).ready(function() {
     // Replace with your OpenAI API key (client-side for demo; use server-side in production)
     const openaiApiKey = "YOUR_OPENAI_API_KEY_HERE";
 
-    // Handle gender selection for dynamic heading color (no border changes)
+    // Handle gender selection for dynamic colors (heading, button, and name text)
     $('input[name="gender"]').on('change', function() {
         const gender = $(this).val();
         $('.pet-name-generator-container').removeClass('male-selected female-selected');
         if (gender === 'male') {
             $('.gender-heading').css('color', '#2196F3');
+            $('.generate-button').removeClass('female').addClass('male');
+            $('.pet-name-text').removeClass('female').addClass('male');
         } else if (gender === 'female') {
             $('.gender-heading').css('color', '#E91E63');
+            $('.generate-button').removeClass('male').addClass('female');
+            $('.pet-name-text').removeClass('male').addClass('female');
         }
     });
 
@@ -39,11 +43,11 @@ $(document).ready(function() {
             }),
             success: function(response) {
                 const name = response.choices[0].text.trim().split("\n")[0] || "Buddy";
-                $('#pet-name-output').text(name);
+                $('#pet-name-output').text(name).removeClass('male female').addClass(gender.toLowerCase());
                 $('#pet-name-result').show();
             },
             error: function(xhr) {
-                $('#pet-name-output').text("Error generating name: " + xhr.statusText);
+                $('#pet-name-output').text("Error generating name: " + xhr.statusText).removeClass('male female');
                 $('#pet-name-result').show();
             }
         });
