@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // Replace with your OpenAI API key (client-side for demo; use server-side in production)
-    const openaiApiKey = "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";
+    const openaiApiKey = "YOUR_OPENAI_API_KEY_HERE";
 
     // Manual static names (50 per category for male and female)
     const staticNames = {
