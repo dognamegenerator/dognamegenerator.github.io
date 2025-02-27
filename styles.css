@@ -1,36 +1,48 @@
-.pet-name-generator-container { text-align: center; max-width: 90%; margin: 0 auto; padding: 20px; }
-.logo-container { margin-bottom: 20px; }
-.ui-logo { max-width: 150px; height: auto; }
-.ui-title, .static-categories-title, .dynamic-field-title { margin: 10px 0; }
-.static-categories-scrollable, .dynamic-categories-scrollable { 
-    max-height: 200px; 
-    overflow-y: auto; 
-    margin-bottom: 20px; 
-    border: 1px solid #ccc; 
-    padding: 10px; 
+.pet-name-generator-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.category-label { display: block; margin: 5px 0; }
-.submit-button-container { margin: 20px 0; }
-.fetch-names-button { 
-    padding: 10px 20px; 
-    background-color: #0073aa; 
-    color: white; 
-    border: none; 
-    cursor: pointer; 
-    margin: 0 10px; 
+
+.section { margin-bottom: 20px; }
+.section h2 { margin-bottom: 10px; }
+.section p { font-size: 0.9em; color: #666; margin-bottom: 10px; }
+
+.category-group { margin-bottom: 15px; }
+.category-group h3 { margin-bottom: 10px; }
+
+.radio-group { display: flex; flex-direction: column; gap: 5px; }
+.radio-label { 
+    padding: 8px;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
 }
-.fetch-names-button:hover { background-color: #005d87; }
-.ai-button { background-color: #28a745; }
-.ai-button:hover { background-color: #218838; }
-.pet-names-grid { 
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 10px; 
-    justify-content: center; 
+.radio-label input[type="radio"] { margin-right: 5px; }
+
+.submit-button-container { margin-top: 20px; }
+.generate-button {
+    padding: 12px 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
-.pet-name-item { 
-    padding: 10px; 
-    background-color: #f1f1f1; 
-    border-radius: 5px; 
-    min-width: 100px; 
+.generate-button:hover { background-color: #45a049; }
+
+.pet-name-result {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    background-color: white;
 }
+.pet-name-result h2 { color: #4CAF50; margin-bottom: 10px; }
+.pet-name-result p { font-size: 1.2em; font-weight: bold; color: #333; }
