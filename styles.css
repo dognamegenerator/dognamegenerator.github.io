@@ -40,16 +40,16 @@ body {
 }
 
 .nav-button {
-    padding: 12px 30px; /* Slightly larger padding for beauty */
-    background: linear-gradient(45deg, #4FC3F7, #03A9F4); /* Beautiful light blue gradient */
+    padding: 12px 30px; /* Box-style padding for beauty */
+    background: linear-gradient(45deg, #4FC3F7, #03A9F4); /* Beautiful bluish shade */
     color: white;
-    border: none;
-    border-radius: 25px; /* More rounded for beauty */
+    border: 2px solid #0288D1; /* Box-style border for definition */
+    border-radius: 15px; /* Box-style rounded corners */
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
     box-shadow: 0 8px 20px rgba(79, 195, 247, 0.4), 0 0 12px rgba(79, 195, 247, 0.2); /* Enhanced shadow for beauty */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     position: relative;
     overflow: hidden;
     text-transform: uppercase; /* Uppercase for elegance */
@@ -70,8 +70,9 @@ body {
 .nav-button:hover {
     transform: translateY(-4px); /* More pronounced lift for beauty */
     box-shadow: 0 12px 25px rgba(79, 195, 247, 0.6), 0 0 15px rgba(79, 195, 247, 0.3);
-    background: linear-gradient(45deg, #03A9F4, #0288D1); /* Darker blue on hover */
+    background: linear-gradient(45deg, #03A9F4, #0288D1); /* Darker bluish shade on hover */
     color: #ffffff; /* Ensure text remains white on hover */
+    border-color: #01579B; /* Darker border on hover for box style */
 }
 
 /* Pet Name Generator Container (Main Content) */
