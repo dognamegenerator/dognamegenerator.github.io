@@ -1,0 +1,36 @@
+.pet-name-generator-container { text-align: center; max-width: 90%; margin: 0 auto; padding: 20px; }
+.logo-container { margin-bottom: 20px; }
+.ui-logo { max-width: 150px; height: auto; }
+.ui-title, .static-categories-title, .dynamic-field-title { margin: 10px 0; }
+.static-categories-scrollable, .dynamic-categories-scrollable { 
+    max-height: 200px; 
+    overflow-y: auto; 
+    margin-bottom: 20px; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+}
+.category-label { display: block; margin: 5px 0; }
+.submit-button-container { margin: 20px 0; }
+.fetch-names-button { 
+    padding: 10px 20px; 
+    background-color: #0073aa; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    margin: 0 10px; 
+}
+.fetch-names-button:hover { background-color: #005d87; }
+.ai-button { background-color: #28a745; }
+.ai-button:hover { background-color: #218838; }
+.pet-names-grid { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
+}
+.pet-name-item { 
+    padding: 10px; 
+    background-color: #f1f1f1; 
+    border-radius: 5px; 
+    min-width: 100px; 
+}
