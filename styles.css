@@ -28,10 +28,20 @@ header.girl {
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Adjusted to place "My Names" on the right */
+    justify-content: space-between;
     max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 40px; /* Adjust based on your logo size */
+    width: auto;
 }
 
 .saved-names {
@@ -369,6 +379,10 @@ footer {
         flex-direction: column;
         text-align: center;
         padding: 15px 20px;
+    }
+
+    .logo {
+        margin-bottom: 15px;
     }
 
     .saved-names {
