@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breed Selector - Dog Name Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <i class="fas fa-paw"></i> Dog Name Generator
+        </div>
+        <nav>
+            <a href="index.html">Dog Name Generator</a>
+        </nav>
+        <div class="saved-names">
+            <i class="fas fa-heart"></i> My Names: <span id="savedCount">0</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="breed-selector">
+            <h1>Find Your Perfect Dog Breed</h1>
+            <p>Answer a few questions to discover the best dog breed for your lifestyle!</p>
+            <div class="questions">
+                <div class="question">
+                    <h3>What size dog are you looking for?</h3>
+                    <select id="size">
+                        <option value="">Select Size</option>
+                        <option value="small">Small (Under 20 lbs)</option>
+                        <option value="medium">Medium (20-50 lbs)</option>
+                        <option value="large">Large (Over 50 lbs)</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <h3>How active is your lifestyle?</h3>
+                    <select id="activity">
+                        <option value="">Select Activity Level</option>
+                        <option value="low">Low (Relaxed, short walks)</option>
+                        <option value="medium">Medium (Daily walks, some play)</option>
+                        <option value="high">High (Running, hiking, very active)</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <h3>Do you have kids or other pets?</h3>
+                    <select id="family">
+                        <option value="">Select Family Situation</option>
+                        <option value="yes">Yes, I have kids/pets</option>
+                        <option value="no">No, I don’t</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="findBreed()" id="findBreedBtn"><i class="fas fa-paw"></i> Find My Breed</button>
+            <div class="breed-result" id="breedResult"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Dog Name Generator</a>
+            <a href="breed-selector.html">Breed Selector</a>
+            <a href="#">Saved Names</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-info">
+            <p>© 2025 Dog Name Generator • <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a> • Have a cat? Check out our site <a href="#">Find Cat Names</a></p>
+            <p>11500 Wayzata Blvd. #1220, Minnetonka, MN, 55305</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
