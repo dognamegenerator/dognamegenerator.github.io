@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: #ffffff; /* Changed to proper white */
     color: #333;
     line-height: 1.6;
 }
@@ -175,10 +175,9 @@ p {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-    padding: 0 20px;
+    padding: 20px;
     background: #f9f9f9;
     border-radius: 10px;
-    padding: 20px;
 }
 
 .name-styles, .name-themes {
@@ -186,27 +185,31 @@ p {
     margin: 0 20px;
 }
 
+.name-styles h4, .name-themes h4 {
+    text-align: left;
+}
+
 label {
-    display: block;
+    display: flex;
+    align-items: center;
     margin: 12px 0;
     font-size: 16px;
     color: #444;
-    text-align: center;
     transition: color 0.3s;
+}
+
+label input[type="checkbox"] {
+    margin-right: 10px;
 }
 
 label:hover {
     color: #007bff;
 }
 
-input[type="checkbox"] {
-    margin-right: 10px;
-}
-
 #findBtn, #findBreedBtn {
     display: block;
     margin: 0 auto;
-    padding: 15px 50px;
+    padding: 18px 60px; /* Increased padding for a more beautiful look */
     font-size: 18px;
     background-color: #007bff;
     color: white;
