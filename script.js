@@ -59,7 +59,40 @@ function generateNames() {
     window.location.href = "results.html";
 }
 
-// Load names on results page and saved names on both pages
+// Breed Selector Logic
+function findBreed() {
+    const size = document.getElementById("size").value;
+    const activity = document.getElementById("activity").value;
+    const family = document.getElementById("family").value;
+    const resultDiv = document.getElementById("breedResult");
+
+    if (!size || !activity || !family) {
+        resultDiv.innerHTML = "Please answer all questions to find your perfect breed!";
+        return;
+    }
+
+    // Simple breed recommendation logic
+    let recommendedBreed = "";
+    if (size === "small" && activity === "low" && family === "yes") {
+        recommendedBreed = "Shih Tzu - A small, affectionate dog that’s great for families and doesn’t need much exercise.";
+    } else if (size === "small" && activity === "medium" && family === "no") {
+        recommendedBreed = "Dachshund - A small, playful dog that enjoys moderate activity and is great for individuals.";
+    } else if (size === "medium" && activity === "medium" && family === "yes") {
+        recommendedBreed = "Beagle - A friendly, medium-sized dog that’s good with kids and loves daily walks.";
+    } else if (size === "medium" && activity === "high" && family === "no") {
+        recommendedBreed = "Australian Cattle Dog - A medium-sized, energetic breed perfect for active owners.";
+    } else if (size === "large" && activity === "high" && family === "yes") {
+        recommendedBreed = "Labrador Retriever - A large, active, and family-friendly dog that loves to play.";
+    } else if (size === "large" && activity === "low" && family === "no") {
+        recommendedBreed = "Great Dane - A gentle giant that doesn’t require much exercise and is good for calm households.";
+    } else {
+        recommendedBreed = "Golden Retriever - A versatile, friendly breed that adapts well to most lifestyles.";
+    }
+
+    resultDiv.innerHTML = `<strong>Your Recommended Breed:</strong> ${recommendedBreed}`;
+}
+
+// Load names on results page and saved names on all pages
 document.addEventListener("DOMContentLoaded", () => {
     // Update saved names count on load
     document.getElementById("savedCount").innerText = savedNames.length;
