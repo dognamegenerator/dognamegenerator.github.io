@@ -104,10 +104,23 @@ h2.girl {
     border-bottom: 3px solid #ff69b4;
 }
 
+h2 i {
+    margin-right: 10px;
+    color: #ffd700;
+}
+
 h3 {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 15px;
     color: #333;
+    text-align: center;
+}
+
+h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #555;
+    text-align: center;
 }
 
 p {
@@ -115,6 +128,10 @@ p {
     color: #555;
     text-align: center;
     font-size: 16px;
+}
+
+.step {
+    margin-bottom: 40px;
 }
 
 .gender-selection {
@@ -131,7 +148,7 @@ p {
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
 }
 
 #boyBtn {
@@ -149,11 +166,19 @@ p {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
+.gender-selection button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
 .options {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     padding: 0 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .name-styles, .name-themes {
@@ -161,19 +186,17 @@ p {
     margin: 0 20px;
 }
 
-.name-styles h3, .name-themes h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #333;
-    text-align: center;
-}
-
 label {
     display: block;
-    margin: 10px 0;
+    margin: 12px 0;
     font-size: 16px;
     color: #444;
     text-align: center;
+    transition: color 0.3s;
+}
+
+label:hover {
+    color: #007bff;
 }
 
 input[type="checkbox"] {
@@ -190,7 +213,7 @@ input[type="checkbox"] {
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
 }
 
 #findBtn.girl, #findBreedBtn.girl {
@@ -223,12 +246,13 @@ select {
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 select:focus {
     outline: none;
     border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 
 .breed-result {
@@ -239,6 +263,12 @@ select:focus {
     text-align: center;
     font-size: 18px;
     color: #333;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .names-list {
@@ -252,12 +282,13 @@ select:focus {
     background: #f1f3f5;
     padding: 12px;
     border-radius: 10px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.1s;
     text-align: center;
 }
 
 .names-list label:hover {
     background: #e9ecef;
+    transform: scale(1.02);
 }
 
 footer {
@@ -311,7 +342,7 @@ footer {
 
     .options {
         flex-direction: column;
-        padding: 0;
+        padding: 15px;
     }
 
     .name-styles, .name-themes {
@@ -344,5 +375,9 @@ footer {
 
     h2 {
         font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
     }
 }
