@@ -51,20 +51,28 @@ header.girl {
     height: auto;
 }
 
-.saved-names-container #savedCount {
+.saved-names-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.saved-names-text #savedCount {
     font-size: 18px;
     font-weight: 600;
     color: #333;
+    margin-bottom: 2px;
 }
 
-.saved-text {
-    margin-left: 10px;
-    font-size: 16px;
+.saved-names-text .saved-text {
+    font-size: 10px;
     font-weight: 500;
+    color: #333;
 }
 
 nav {
