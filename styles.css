@@ -30,7 +30,7 @@ header.girl {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 0 20px; /* Adjusted padding for edge alignment */
+    padding: 0 20px;
 }
 
 .logo {
@@ -78,7 +78,7 @@ nav a:hover {
 }
 
 .bone-icon {
-    width: 107px;
+    width: 60px;
     height: auto;
 }
 
@@ -106,13 +106,52 @@ nav a:hover {
     color: #333;
 }
 
-main {
-    max-width: 900px;
-    margin: 0 auto;
+/* Main with Ads Layout */
+.main-with-ads {
+    display: flex;
+    justify-content: center;
     padding: 50px 20px;
+    width: 100%;
 }
 
-.intro, .generator, .results, .breed-selector, .saved-names-section {
+.ad-left, .ad-right {
+    width: 300px;
+    margin: 0 20px;
+}
+
+.ad-container {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    height: 600px; /* Standard skyscraper ad size (300x600) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ad-container p {
+    color: #777;
+}
+
+.banner-ad {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.ad-container.banner {
+    width: 728px;
+    height: 90px; /* Standard banner ad size (728x90) */
+    margin: 0 auto;
+}
+
+.content {
+    max-width: 900px;
+    flex-grow: 1;
+}
+
+.intro, .generator, .results, .breed-selector, .saved-names-section, .policy-section, .terms-section, .contact-section {
     background: white;
     padding: 40px;
     border-radius: 15px;
@@ -374,7 +413,18 @@ footer {
     color: #666;
 }
 
-/* Responsive Design */
+/* Responsive Design for Ads */
+@media (max-width: 1260px) {
+    .ad-left, .ad-right {
+        display: none; /* Hide side ads on smaller screens */
+    }
+
+    .content {
+        max-width: 100%;
+        margin: 0 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -398,7 +448,7 @@ footer {
         margin: 10px 0;
     }
 
-    main {
+    .main-with-ads {
         padding: 30px 15px;
     }
 
@@ -431,5 +481,11 @@ footer {
 
     h3 {
         font-size: 20px;
+    }
+
+    .ad-container.banner {
+        width: 100%;
+        max-width: 468px; /* Adjust banner ad size for smaller screens */
+        height: 60px; /* Adjust banner ad size for smaller screens */
     }
 }
