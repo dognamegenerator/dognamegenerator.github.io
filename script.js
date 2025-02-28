@@ -313,22 +313,273 @@ function findBreed() {
         return;
     }
 
-    let recommendedBreed = "";
-    if (size === "small" && activity === "low" && family === "yes") {
-        recommendedBreed = "Shih Tzu - A small, affectionate dog that’s great for families and doesn’t need much exercise.";
-    } else if (size === "small" && activity === "medium" && family === "no") {
-        recommendedBreed = "Dachshund - A small, playful dog that enjoys moderate activity and is great for individuals.";
-    } else if (size === "medium" && activity === "medium" && family === "yes") {
-        recommendedBreed = "Beagle - A friendly, medium-sized dog that’s good with kids and loves daily walks.";
-    } else if (size === "medium" && activity === "high" && family === "no") {
-        recommendedBreed = "Australian Cattle Dog - A medium-sized, energetic breed perfect for active owners.";
-    } else if (size === "large" && activity === "high" && family === "yes") {
-        recommendedBreed = "Labrador Retriever - A large, active, and family-friendly dog that loves to play.";
-    } else if (size === "large" && activity === "low" && family === "no") {
-        recommendedBreed = "Great Dane - A gentle giant that doesn’t require much exercise and is good for calm households.";
-    } else {
-        recommendedBreed = "Golden Retriever - A versatile, friendly breed that adapts well to most lifestyles.";
-    }
+    const breeds = {
+        small: {
+            low: {
+                yes: [
+                    "Shih Tzu", "Pomeranian", "Chihuahua", "Pug", "Maltese",
+                    "Papillon", "Cavalier King Charles Spaniel", "Havanese", "Bichon Frise", "Pekingese",
+                    "Toy Poodle", "Yorkshire Terrier", "Dachshund", "Miniature Pinscher", "French Bulldog",
+                    "Italian Greyhound", "Lhasa Apso", "Shiba Inu", "Boston Terrier", "Norfolk Terrier",
+                    "Norwich Terrier", "West Highland White Terrier", "Cairn Terrier", "Shetland Sheepdog", "Miniature Schnauzer",
+                    "Japanese Chin", "Brussels Griffon", "Affenpinscher", "Silky Terrier", "Toy Fox Terrier",
+                    "English Toy Spaniel", "Chinese Crested", "Tibetan Spaniel", "Schipperke", "Rat Terrier",
+                    "Jack Russell Terrier", "Parson Russell Terrier", "Border Terrier", "Manchester Terrier", "Dandie Dinmont Terrier",
+                    "Sealyham Terrier", "Cesky Terrier", "Glen of Imaal Terrier", "Australian Terrier", "Scottish Terrier",
+                    "Skye Terrier", "Lakeland Terrier", "Welsh Terrier", "Irish Terrier", "Soft Coated Wheaten Terrier",
+                    "Miniature Bull Terrier", "Smooth Fox Terrier", "Wire Fox Terrier", "Bedlington Terrier", "Kerry Blue Terrier"
+                ],
+                no: [
+                    "Dachshund", "Chihuahua", "Pomeranian", "Pug", "Maltese",
+                    "Shih Tzu", "Papillon", "Havanese", "Bichon Frise", "Pekingese",
+                    "Toy Poodle", "Yorkshire Terrier", "Miniature Pinscher", "French Bulldog", "Italian Greyhound",
+                    "Lhasa Apso", "Shiba Inu", "Boston Terrier", "Norfolk Terrier", "Norwich Terrier",
+                    "West Highland White Terrier", "Cairn Terrier", "Shetland Sheepdog", "Miniature Schnauzer", "Japanese Chin",
+                    "Brussels Griffon", "Affenpinscher", "Silky Terrier", "Toy Fox Terrier", "English Toy Spaniel",
+                    "Chinese Crested", "Tibetan Spaniel", "Schipperke", "Rat Terrier", "Jack Russell Terrier",
+                    "Parson Russell Terrier", "Border Terrier", "Manchester Terrier", "Dandie Dinmont Terrier", "Sealyham Terrier",
+                    "Cesky Terrier", "Glen of Imaal Terrier", "Australian Terrier", "Scottish Terrier", "Skye Terrier",
+                    "Lakeland Terrier", "Welsh Terrier", "Irish Terrier", "Soft Coated Wheaten Terrier", "Miniature Bull Terrier",
+                    "Smooth Fox Terrier", "Wire Fox Terrier", "Bedlington Terrier", "Kerry Blue Terrier", "Lowchen"
+                ]
+            },
+            medium: {
+                yes: [
+                    "Beagle", "Cocker Spaniel", "Springer Spaniel", "Shetland Sheepdog", "Brittany",
+                    "English Cocker Spaniel", "Shiba Inu", "Whippet", "Miniature American Shepherd", "Border Collie",
+                    "Australian Terrier", "Basenji", "Bedlington Terrier", "Bichon Frise", "Boston Terrier",
+                    "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund", "French Bulldog",
+                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
+                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
+                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Pug", "Scottish Terrier",
+                    "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier",
+                    "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie",
+                    "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel",
+                    "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel"
+                ],
+                no: [
+                    "Australian Cattle Dog", "Beagle", "Cocker Spaniel", "Springer Spaniel", "Shetland Sheepdog",
+                    "Brittany", "English Cocker Spaniel", "Shiba Inu", "Whippet", "Miniature American Shepherd",
+                    "Border Collie", "Australian Terrier", "Basenji", "Bedlington Terrier", "Bichon Frise",
+                    "Boston Terrier", "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund",
+                    "French Bulldog", "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond",
+                    "Kerry Blue Terrier", "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher",
+                    "Miniature Schnauzer", "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Pug",
+                    "Scottish Terrier", "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier",
+                    "Tibetan Terrier", "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog",
+                    "Australian Kelpie", "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter",
+                    "Field Spaniel", "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever"
+                ]
+            },
+            high: {
+                yes: [
+                    "Jack Russell Terrier", "Parson Russell Terrier", "Border Terrier", "Shetland Sheepdog", "Miniature American Shepherd",
+                    "Beagle", "Cocker Spaniel", "Springer Spaniel", "Brittany", "English Cocker Spaniel",
+                    "Shiba Inu", "Whippet", "Australian Terrier", "Basenji", "Bedlington Terrier",
+                    "Boston Terrier", "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund",
+                    "French Bulldog", "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond",
+                    "Kerry Blue Terrier", "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher",
+                    "Miniature Schnauzer", "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Scottish Terrier",
+                    "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier",
+                    "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie",
+                    "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel",
+                    "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel"
+                ],
+                no: [
+                    "Australian Cattle Dog", "Jack Russell Terrier", "Parson Russell Terrier", "Border Terrier", "Shetland Sheepdog",
+                    "Miniature American Shepherd", "Beagle", "Cocker Spaniel", "Springer Spaniel", "Brittany",
+                    "English Cocker Spaniel", "Shiba Inu", "Whippet", "Australian Terrier", "Basenji",
+                    "Bedlington Terrier", "Boston Terrier", "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel",
+                    "Dachshund", "French Bulldog", "Havanese", "Irish Terrier", "Japanese Spitz",
+                    "Keeshond", "Kerry Blue Terrier", "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier",
+                    "Miniature Pinscher", "Miniature Schnauzer", "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi",
+                    "Scottish Terrier", "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier",
+                    "Tibetan Terrier", "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog",
+                    "Australian Kelpie", "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter",
+                    "Field Spaniel", "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever"
+                ]
+            }
+        },
+        medium: {
+            low: {
+                yes: [
+                    "Beagle", "Cocker Spaniel", "Springer Spaniel", "Shetland Sheepdog", "Brittany",
+                    "English Cocker Spaniel", "Shiba Inu", "Whippet", "Miniature American Shepherd", "Border Collie",
+                    "Australian Terrier", "Basenji", "Bedlington Terrier", "Bichon Frise", "Boston Terrier",
+                    "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund", "French Bulldog",
+                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
+                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
+                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Pug", "Scottish Terrier",
+                    "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier",
+                    "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie",
+                    "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel",
+                    "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel"
+                ],
+                no: [
+                    "Dachshund", "Beagle", "Cocker Spaniel", "Springer Spaniel", "Shetland Sheepdog",
+                    "Brittany", "English Cocker Spaniel", "Shiba Inu", "Whippet", "Miniature American Shepherd",
+                    "Border Collie", "Australian Terrier", "Basenji", "Bedlington Terrier", "Bichon Frise",
+                    "Boston Terrier", "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "French Bulldog",
+                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
+                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
+                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Pug", "Scottish Terrier",
+                    "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier",
+                    "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie",
+                    "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel",
+                    "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel"
+                ]
+            },
+            medium: {
+                yes: [
+                    "Beagle", "Cocker Spaniel", "Springer Spaniel", "Shetland Sheepdog", "Brittany",
+                    "English Cocker Spaniel", "Shiba Inu", "Whippet", "Miniature American Shepherd", "Border Collie",
+                    "Australian Terrier", "Basenji", "Bedlington Terrier", "Bichon Frise", "Boston Terrier",
+                    "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund", "French Bulldog",
+                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
+                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
+                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Pug", "Scottish Terrier",
+                    "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier",
+                    "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie",
+                    "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel",
+                    "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel"
+                ],
+                no: [
+                    "Australian Cattle Dog", "Beagle", "Cocker Spaniel", "Springer Spaniel", "Shetland Sheepdog",
+                    "Brittany", "English Cocker Spaniel", "Shiba Inu", "Whippet", "Miniature American Shepherd",
+                    "Border Collie", "Australian Terrier", "Basenji", "Bedlington Terrier", "Bichon Frise",
+                    "Boston Terrier", "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund",
+                    "French Bulldog", "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond",
+                    "Kerry Blue Terrier", "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher",
+                    "Miniature Schnauzer", "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Pug",
+                    "Scottish Terrier", "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier",
+                    "Tibetan Terrier", "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog",
+                    "Australian Kelpie", "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter",
+                    "Field Spaniel", "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever"
+                ]
+            },
+            high: {
+                yes: [
+                    "Australian Cattle Dog", "Border Collie", "Beagle", "Cocker Spaniel", "Springer Spaniel",
+                    "Shetland Sheepdog", "Brittany", "English Cocker Spaniel", "Shiba Inu", "Whippet",
+                    "Miniature American Shepherd", "Australian Terrier", "Basenji", "Bedlington Terrier", "Boston Terrier",
+                    "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund", "French Bulldog",
+                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
+                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
+                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Scottish Terrier", "Sealyham Terrier",
+                    "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier", "Welsh Terrier",
+                    "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie", "Boykin Spaniel",
+                    "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel", "Gordon Setter",
+                    "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel", "Vizsla"
+                ],
+                no: [
+                    "Australian Cattle Dog", "Border Collie", "Beagle", "Cocker Spaniel", "Springer Spaniel",
+                    "Shetland Sheepdog", "Brittany", "English Cocker Spaniel", "Shiba Inu", "Whippet",
+                    "Miniature American Shepherd", "Australian Terrier", "Basenji", "Bedlington Terrier", "Boston Terrier",
+                    "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund", "French Bulldog",
+                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
+                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
+                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Scottish Terrier", "Sealyham Terrier",
+                    "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier", "Welsh Terrier",
+                    "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie", "Boykin Spaniel",
+                    "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel", "Gordon Setter",
+                    "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel", "Vizsla"
+                ]
+            }
+        },
+        large: {
+            low: {
+                yes: [
+                    "Great Dane", "Mastiff", "Newfoundland", "Saint Bernard", "Bernese Mountain Dog",
+                    "Great Pyrenees", "Leonberger", "Irish Wolfhound", "Scottish Deerhound", "Anatolian Shepherd",
+                    "Tibetan Mastiff", "Black Russian Terrier", "Komondor", "Kuvasz", "Neapolitan Mastiff",
+                    "Cane Corso", "Dogue de Bordeaux", "Bullmastiff", "English Mastiff", "Fila Brasileiro",
+                    "Perro de Presa Canario", "Tosa Inu", "Boerboel", "Argentine Dogo", "Greater Swiss Mountain Dog",
+                    "Rottweiler", "Doberman Pinscher", "Boxer", "German Shepherd", "Akita",
+                    "Alaskan Malamute", "Siberian Husky", "Samoyed", "Chow Chow", "Keeshond",
+                    "Norwegian Elkhound", "Finnish Spitz", "Icelandic Sheepdog", "Swedish Vallhund", "Lapponian Herder",
+                    "Canadian Eskimo Dog", "Greenland Dog", "Caucasian Shepherd Dog", "Central Asian Shepherd Dog", "Kangal Shepherd Dog",
+                    "Alaskan Klee Kai", "American Bulldog", "Old English Sheepdog", "Briard", "Bearded Collie",
+                    "Bouvier des Flandres", "Belgian Sheepdog", "Belgian Tervuren", "Belgian Malinois", "German Shorthaired Pointer"
+                ],
+                no: [
+                    "Great Dane", "Mastiff", "Newfoundland", "Saint Bernard", "Bernese Mountain Dog",
+                    "Great Pyrenees", "Leonberger", "Irish Wolfhound", "Scottish Deerhound", "Anatolian Shepherd",
+                    "Tibetan Mastiff", "Black Russian Terrier", "Komondor", "Kuvasz", "Neapolitan Mastiff",
+                    "Cane Corso", "Dogue de Bordeaux", "Bullmastiff", "English Mastiff", "Fila Brasileiro",
+                    "Perro de Presa Canario", "Tosa Inu", "Boerboel", "Argentine Dogo", "Greater Swiss Mountain Dog",
+                    "Rottweiler", "Doberman Pinscher", "Boxer", "German Shepherd", "Akita",
+                    "Alaskan Malamute", "Siberian Husky", "Samoyed", "Chow Chow", "Keeshond",
+                    "Norwegian Elkhound", "Finnish Spitz", "Icelandic Sheepdog", "Swedish Vallhund", "Lapponian Herder",
+                    "Canadian Eskimo Dog", "Greenland Dog", "Caucasian Shepherd Dog", "Central Asian Shepherd Dog", "Kangal Shepherd Dog",
+                    "Alaskan Klee Kai", "American Bulldog", "Old English Sheepdog", "Briard", "Bearded Collie",
+                    "Bouvier des Flandres", "Belgian Sheepdog", "Belgian Tervuren", "Belgian Malinois", "German Shorthaired Pointer"
+                ]
+            },
+            medium: {
+                yes: [
+                    "Labrador Retriever", "Golden Retriever", "German Shepherd", "Rottweiler", "Doberman Pinscher",
+                    "Boxer", "Akita", "Alaskan Malamute", "Siberian Husky", "Samoyed",
+                    "Chow Chow", "Keeshond", "Norwegian Elkhound", "Finnish Spitz", "Icelandic Sheepdog",
+                    "Swedish Vallhund", "Lapponian Herder", "Canadian Eskimo Dog", "Greenland Dog", "Caucasian Shepherd Dog",
+                    "Central Asian Shepherd Dog", "Kangal Shepherd Dog", "Alaskan Klee Kai", "American Bulldog", "Old English Sheepdog",
+                    "Briard", "Bearded Collie", "Bouvier des Flandres", "Belgian Sheepdog", "Belgian Tervuren",
+                    "Belgian Malinois", "German Shorthaired Pointer", "English Setter", "Gordon Setter", "Irish Setter",
+                    "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel", "Vizsla", "Weimaraner",
+                    "Pointer", "Chesapeake Bay Retriever", "Curly-Coated Retriever", "Flat-Coated Retriever", "Labrador Retriever",
+                    "Golden Retriever", "German Shepherd", "Rottweiler", "Doberman Pinscher", "Boxer",
+                    "Akita", "Alaskan Malamute", "Siberian Husky", "Samoyed", "Chow Chow"
+                ],
+                no: [
+                    "Labrador Retriever", "Golden Retriever", "German Shepherd", "Rottweiler", "Doberman Pinscher",
+                    "Boxer", "Akita", "Alaskan Malamute", "Siberian Husky", "Samoyed",
+                    "Chow Chow", "Keeshond", "Norwegian Elkhound", "Finnish Spitz", "Icelandic Sheepdog",
+                    "Swedish Vallhund", "Lapponian Herder", "Canadian Eskimo Dog", "Greenland Dog", "Caucasian Shepherd Dog",
+                    "Central Asian Shepherd Dog", "Kangal Shepherd Dog", "Alaskan Klee Kai", "American Bulldog", "Old English Sheepdog",
+                    "Briard", "Bearded Collie", "Bouvier des Flandres", "Belgian Sheepdog", "Belgian Tervuren",
+                    "Belgian Malinois", "German Shorthaired Pointer", "English Setter", "Gordon Setter", "Irish Setter",
+                    "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel", "Vizsla", "Weimaraner",
+                    "Pointer", "Chesapeake Bay Retriever", "Curly-Coated Retriever", "Flat-Coated Retriever", "Labrador Retriever",
+                    "Golden Retriever", "German Shepherd", "Rottweiler", "Doberman Pinscher", "Boxer",
+                    "Akita", "Alaskan Malamute", "Siberian Husky", "Samoyed", "Chow Chow"
+                ]
+            },
+            high: {
+                yes: [
+                    "Labrador Retriever", "Golden Retriever", "German Shepherd", "Rottweiler", "Doberman Pinscher",
+                    "Boxer", "Akita", "Alaskan Malamute", "Siberian Husky", "Samoyed",
+                    "Chow Chow", "Keeshond", "Norwegian Elkhound", "Finnish Spitz", "Icelandic Sheepdog",
+                    "Swedish Vallhund", "Lapponian Herder", "Canadian Eskimo Dog", "Greenland Dog", "Caucasian Shepherd Dog",
+                    "Central Asian Shepherd Dog", "Kangal Shepherd Dog", "Alaskan Klee Kai", "American Bulldog", "Old English Sheepdog",
+                    "Briard", "Bearded Collie", "Bouvier des Flandres", "Belgian Sheepdog", "Belgian Tervuren",
+                    "Belgian Malinois", "German Shorthaired Pointer", "English Setter", "Gordon Setter", "Irish Setter",
+                    "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel", "Vizsla", "Weimaraner",
+                    "Pointer", "Chesapeake Bay Retriever", "Curly-Coated Retriever", "Flat-Coated Retriever", "Labrador Retriever",
+                    "Golden Retriever", "German Shepherd", "Rottweiler", "Doberman Pinscher", "Boxer",
+                    "Akita", "Alaskan Malamute", "Siberian Husky", "Samoyed", "Chow Chow"
+                ],
+                no: [
+                    "Labrador Retriever", "Golden Retriever", "German Shepherd", "Rottweiler", "Doberman Pinscher",
+                    "Boxer", "Akita", "Alaskan Malamute", "Siberian Husky", "Samoyed",
+                    "Chow Chow", "Keeshond", "Norwegian Elkhound", "Finnish Spitz", "Icelandic Sheepdog",
+                    "Swedish Vallhund", "Lapponian Herder", "Canadian Eskimo Dog", "Greenland Dog", "Caucasian Shepherd Dog",
+                    "Central Asian Shepherd Dog", "Kangal Shepherd Dog", "Alaskan Klee Kai", "American Bulldog", "Old English Sheepdog",
+                    "Briard", "Bearded Collie", "Bouvier des Flandres", "Belgian Sheepdog", "Belgian Tervuren",
+                    "Belgian Malinois", "German Shorthaired Pointer", "English Setter", "Gordon Setter", "Irish Setter",
+                    "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel", "Vizsla", "Weimaraner",
+                    "Pointer", "Chesapeake Bay Retriever", "Curly-Coated Retriever", "Flat-Coated Retriever", "Labrador Retriever",
+                    "Golden Retriever", "German Shepherd", "Rottweiler", "Doberman Pinscher", "Boxer",
+                    "Akita", "Alaskan Malamute", "Siberian Husky", "Samoyed", "Chow Chow"
+                ]
+            }
+        }
+    };
+
+    // Construct the category key based on user input
+    const category = breeds[size][activity][family];
+
+    // Select a random breed from the category
+    const randomIndex = Math.floor(Math.random() * category.length);
+    const recommendedBreed = category[randomIndex];
 
     resultDiv.innerHTML = `<strong>Your Recommended Breed:</strong> ${recommendedBreed}`;
 }
