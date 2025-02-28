@@ -18,7 +18,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 20px 0;
+    padding: 10px 0; /* Reduced padding for mobile */
 }
 
 header.girl {
@@ -30,7 +30,7 @@ header.girl {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 15px; /* Reduced padding for mobile */
 }
 
 .logo {
@@ -54,7 +54,7 @@ header.girl {
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 20px;
+    margin: 0 15px; /* Reduced margin for mobile */
     font-size: 16px;
     font-weight: 500;
     transition: color 0.3s;
@@ -78,7 +78,7 @@ nav a:hover {
 }
 
 .bone-icon {
-    width: 107px;
+    width: 60px;
     height: auto;
 }
 
@@ -425,29 +425,53 @@ footer {
     }
 }
 
+/* Mobile Responsive Header */
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px 20px;
+        flex-direction: row; /* Keep the layout horizontal on mobile */
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 10px; /* Further reduced padding for mobile */
     }
 
     .logo {
-        margin-bottom: 15px;
+        margin: 0; /* Remove margin to align with edge */
     }
 
-    .saved-names {
-        margin-top: 15px;
+    .logo-image {
+        height: 30px; /* Reduced logo size for mobile */
     }
 
     .nav-content {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row; /* Keep navigation links horizontal */
+        justify-content: center;
+        flex-grow: 1;
+        margin: 0;
     }
 
     nav a {
-        margin: 10px 0;
+        margin: 0 10px; /* Reduced margin for mobile */
+        font-size: 14px; /* Reduced font size for mobile */
     }
 
+    .saved-names {
+        margin: 0; /* Remove margin to align with edge */
+    }
+
+    .bone-icon {
+        width: 40px; /* Reduced bone icon size for mobile */
+    }
+
+    .saved-names-text #savedCount {
+        font-size: 14px; /* Reduced font size for mobile */
+    }
+
+    .saved-names-text .saved-text {
+        font-size: 8px; /* Reduced font size for mobile */
+    }
+
+    /* Adjust main content for mobile */
     .main-with-ads {
         padding: 30px 15px;
     }
@@ -469,6 +493,7 @@ footer {
     .gender-selection button {
         padding: 12px 30px;
         margin: 0 10px;
+        font-size: 16px; /* Reduced button font size for mobile */
     }
 
     h1 {
