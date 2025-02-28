@@ -18,7 +18,6 @@ function generateNames() {
         return;
     }
 
-    // Sample names database
     const names = {
         boy: {
             friendly: ["Buddy", "Max", "Charlie", "Cooper", "Jack"],
@@ -58,7 +57,6 @@ function generateNames() {
         }
     });
 
-    // Remove duplicates and shuffle the array
     selectedNames = [...new Set(selectedNames)];
     selectedNames.sort(() => Math.random() - 0.5);
 
@@ -68,7 +66,6 @@ function generateNames() {
     window.location.href = "results.html";
 }
 
-// Breed Selector Logic
 function findBreed() {
     const size = document.getElementById("size").value;
     const activity = document.getElementById("activity").value;
@@ -80,7 +77,6 @@ function findBreed() {
         return;
     }
 
-    // Simple breed recommendation logic
     let recommendedBreed = "";
     if (size === "small" && activity === "low" && family === "yes") {
         recommendedBreed = "Shih Tzu - A small, affectionate dog that’s great for families and doesn’t need much exercise.";
@@ -101,9 +97,7 @@ function findBreed() {
     resultDiv.innerHTML = `<strong>Your Recommended Breed:</strong> ${recommendedBreed}`;
 }
 
-// Load names on results page and saved names on all pages
 document.addEventListener("DOMContentLoaded", () => {
-    // Update saved names count on load
     document.getElementById("savedCount").innerText = savedNames.length;
 
     if (window.location.pathname.includes("results.html")) {
@@ -111,19 +105,30 @@ document.addEventListener("DOMContentLoaded", () => {
         const gender = localStorage.getItem("gender") || "boy";
         const style = localStorage.getItem("style") || "general";
 
-        // Update header and title based on gender
         document.getElementById("header").className = gender;
         document.getElementById("resultsTitle").innerText = `${style.charAt(0).toUpperCase() + style.slice(1)} Dog Names for ${gender === "boy" ? "Boy" : "Girl"} Dogs`;
         document.getElementById("resultsTitle").className = gender;
         document.getElementById("resultsDesc").innerHTML = `A list of great ${style} dog names for your pup. Or view ${style} dog names for ${gender === "boy" ? "girls" : "boys"} instead.<br>Check the names you like the best to save them to your list.`;
 
-        // Populate names
         const namesList = document.getElementById("namesList");
         names.forEach(name => {
             const label = document.createElement("label");
             label.innerHTML = `<input type="checkbox" value="${name}" onchange="saveName(this)" ${savedNames.includes(name) ? "checked" : ""}> ${name}`;
             namesList.appendChild(label);
         });
+    }
+
+    if (window.location.pathname.includes("saved-names.html")) {
+        const savedNamesList = document.getElementById("savedNamesList");
+        if (savedNames.length === 0) {
+            savedNamesList.innerHTML = "<p>You haven't saved any names yet!</p>";
+        } else {
+            savedNames.forEach(name => {
+                const label = document.createElement("label");
+                label.innerHTML = `<input type="checkbox" value="${name}" onchange="saveName(this)" checked> ${name}`;
+                savedNamesList.appendChild(label);
+            });
+        }
     }
 });
 
@@ -136,4 +141,18 @@ function saveName(checkbox) {
     }
     localStorage.setItem("savedNames", JSON.stringify(savedNames));
     document.getElementById("savedCount").innerText = savedNames.length;
+
+    if (window.location.pathname.includes("saved-names.html")) {
+        const savedNamesList = document.getElementById("savedNamesList");
+        savedNamesList.innerHTML = "";
+        if (savedNames.length === 0) {
+            savedNamesList.innerHTML = "<p>You haven't saved any names yet!</p>";
+        } else {
+            savedNames.forEach(name => {
+                const label = document.createElement("label");
+                label.innerHTML = `<input type="checkbox" value="${name}" onchange="saveName(this)" checked> ${name}`;
+                savedNamesList.appendChild(label);
+            });
+        }
+    }
 }
