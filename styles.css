@@ -460,7 +460,7 @@ footer {
     }
 
     .bone-icon {
-        width: 70px; /* Reduced bone icon size for mobile */
+        width: 75px; /* Reduced bone icon size for mobile */
     }
 
     .saved-names-text #savedCount {
