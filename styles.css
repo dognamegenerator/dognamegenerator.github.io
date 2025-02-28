@@ -1,381 +1,317 @@
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f5faff, #e3f2fd); /* Soft, elegant light blue gradient for the page */
+* {
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    box-sizing: border-box;
 }
 
-.site-header {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center the header content to match plugin style */
-    padding: 20px 40px;
-    background: #4FC3F7; /* Softer, attractive light blue for header */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    border-radius: 0 0 15px 15px;
-    transition: transform 0.3s ease; /* Smooth sliding transition */
-}
-
-/* Slide header slightly left */
-.site-header.slide-left {
-    transform: translateX(-50px); /* Slide 50px left by default; adjust this value as needed */
-}
-
-/* Optional: Add a hover effect or class to toggle sliding */
-.site-header:hover {
-    transform: translateX(-50px); /* Slide on hover, if desired */
-}
-
-.logo-container { 
-    flex: 0 0 auto; 
-    padding: 10px; /* Adjustable padding */
-}
-.logo { 
-    max-width: 200px; /* Slightly shorter logo */
-    height: 80px; /* Adjustable height */
-    width: auto; /* Maintain aspect ratio */
-    border-radius: 10px; 
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease; /* Smooth scaling on hover */
-}
-.logo:hover { transform: scale(1.05); } /* Slight zoom on hover for interactivity */
-
-.nav-buttons {
-    display: flex;
-    gap: 25px; /* Increased gap for better spacing */
-    align-items: center;
-    justify-content: center; /* Center the buttons within nav to match plugin */
-    flex: 1;
-    margin-left: 20px; /* Additional left margin to slide buttons left */
-}
-
-.nav-button {
-    padding: 12px 30px; /* Rectangular shape with larger padding */
-    background: #ffffff; /* White background for buttons, contrasting header */
-    color: #0288D1; /* Softer dark blue text for harmony */
-    border: 2px solid #0288D1; /* Softer dark blue border for definition */
-    border-radius: 5px; /* Slight rounding for rectangular shape */
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(2, 136, 209, 0.2); /* Subtle shadow for beauty */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    text-transform: uppercase; /* Uppercase for elegance */
-    letter-spacing: 1px; /* Slight letter spacing for style */
-}
-.nav-button::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(2, 136, 209, 0.1); /* Softer dark blue overlay on hover */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.nav-button:hover::after { opacity: 1; }
-.nav-button:hover {
-    transform: translateY(-4px); /* More pronounced lift for beauty */
-    box-shadow: 0 8px 18px rgba(2, 136, 209, 0.3);
-    background: #e3f2fd; /* Lighter blue on hover for contrast */
-    color: #01579B; /* Even darker blue text on hover */
-}
-
-/* Pet Name Generator Container (Main Content) */
-.pet-name-generator-container {
-    max-width: 700px; /* Wider UI */
-    width: 90%;
-    margin: 0 auto 20px;
-    padding: 30px;
-    border-radius: 25px;
-    background: linear-gradient(135deg, #ffffff, #f5fff5);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 15px rgba(76, 175, 80, 0.3);
-    transition: box-shadow 0.5s ease, transform 0.3s ease;
-    overflow: hidden;
-    text-align: center; /* Center all text */
-}
-
-.pet-name-generator-container:hover {
-    transform: scale(1.02);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2), 0 0 20px rgba(76, 175, 80, 0.4);
-}
-
-.section { margin-bottom: 30px; }
-.section h2, .category-group h3 { 
-    margin-bottom: 20px; 
-    font-weight: 600; 
-    text-transform: uppercase; 
-    letter-spacing: 1.5px;
-}
-
-.gender-heading { 
-    margin-bottom: 20px; 
-    transition: color 0.5s ease;
-    font-size: 1.5em;
-    color: #2196F3; /* Blue for "Choose Gender" */
-}
-
-.section p { 
-    font-size: 1em; 
-    color: #666; 
-    margin-bottom: 20px; 
-    font-style: italic;
-}
-
-.category-group { margin-bottom: 25px; }
-.category-group h3 { margin-bottom: 20px; }
-
-.radio-group { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 15px; 
-    align-items: center; 
-}
-.radio-label { 
-    padding: 15px 25px;
-    background: #fff;
-    border-radius: 15px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    width: 90%; /* Ensure labels are wide and centered */
-    max-width: 400px;
-    overflow: hidden;
-}
-.radio-label::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(76, 175, 80, 0.1);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.radio-label:hover::after { opacity: 1; }
-.radio-label:hover { 
-    background-color: #f5fff5; 
-    transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-}
-.radio-label input[type="radio"] { margin-right: 15px; }
-
-.submit-button-container { margin-top: 35px; text-align: center; }
-.generate-button {
-    padding: 16px 50px;
-    background: linear-gradient(45deg, #4CAF50, #388E3C);
-    color: white;
-    border: none;
-    border-radius: 35px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.5), 0 0 15px rgba(76, 175, 80, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-.generate-button::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.3);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.generate-button:hover::after { opacity: 1; }
-.generate-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(76, 175, 80, 0.7), 0 0 20px rgba(76, 175, 80, 0.4);
-}
-
-/* Dynamic Colors for Button and Hover Based on Gender */
-.male .generate-button {
-    background: linear-gradient(45deg, #2196F3, #1976D2);
-}
-.male .generate-button:hover {
-    background: linear-gradient(45deg, #1976D2, #1565C0);
-    box-shadow: 0 15px 30px rgba(33, 150, 243, 0.7), 0 0 20px rgba(33, 150, 243, 0.4);
-}
-.female .generate-button {
-    background: linear-gradient(45deg, #E91E63, #D81B60);
-}
-.female .generate-button:hover {
-    background: linear-gradient(45deg, #D81B60, #C2185B);
-    box-shadow: 0 15px 30px rgba(233, 30, 99, 0.7), 0 0 20px rgba(233, 30, 99, 0.4);
-}
-
-.pet-name-result {
-    margin-top: 30px;
-    padding: 25px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, #fff, #f5fff5);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 0 15px rgba(76, 175, 80, 0.3);
-    transition: box-shadow 0.5s ease, background 0.5s ease;
-    animation: fadeIn 0.5s ease-in;
-}
-
-/* Dynamic Colors for Result Heading and Name Box Background Based on Gender */
-.male .pet-name-result {
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-}
-.male .result-heading {
-    color: #2196F3;
-}
-.female .pet-name-result {
-    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
-}
-.female .result-heading {
-    color: #E91E63;
-}
-
-/* Dynamic Colors for Name Output Text Based on Gender */
-.pet-name-text.male { color: #1565C0; } /* Intense blue */
-.pet-name-text.female { color: #C2185B; } /* Intense pink */
-.pet-name-text {
-    font-size: 2em; 
-    font-weight: bold; 
-    text-align: center;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.1);
-    transition: color 0.5s ease;
-    animation: bounceIn 0.5s ease-out;
-}
-
-/* Desktop Centering and Width */
-@media (min-width: 768px) {
-    .pet-name-generator-container { 
-        width: 700px;
-        margin: 20px auto;
-    }
-    .radio-label { width: 85%; }
-}
-
-/* Mobile Optimization */
-@media (max-width: 767px) {
-    .pet-name-generator-container {
-        width: 85%;
-        margin: 10px auto;
-        padding: 15px;
-    }
-    .site-header { 
-        padding: 15px 20px; 
-        justify-content: center; /* Center on mobile to match plugin */
-    }
-    .site-header.slide-left { transform: translateX(-30px); } /* Adjust sliding for mobile */
-    .logo { max-width: 150px; height: 60px; } /* Smaller on mobile */
-    .nav-button { 
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-    .radio-label { 
-        padding: 10px 15px; 
-        font-size: 0.9em;
-        width: 100%;
-        max-width: 100%;
-    }
-    .generate-button { 
-        padding: 12px 35px;
-        font-size: 16px;
-    }
-    .pet-name-text { font-size: 1.5em; }
-    .pet-name-result { padding: 15px; }
-}
-
-/* Dynamic Colors for Gender Heading */
-.male .gender-heading { color: #2196F3; }
-.female .gender-heading { color: #E91E63; }
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes bounceIn {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-/* Site Content and Article Styles */
-.site-content {
-    max-width: 800px;
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-    background: linear-gradient(135deg, #f5faff, #e3f2fd); /* Match page background for consistency */
-}
-
-.article-content {
-    text-align: center;
-    margin-top: 20px;
-}
-.article-content h1 {
-    color: #4CAF50;
-    font-size: 2.5em;
-    margin-bottom: 25px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-.article-content h2 {
-    color: #4CAF50;
-    font-size: 1.8em;
-    margin: 20px 0 15px;
-}
-.article-content p {
-    font-size: 1.2em;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
     color: #333;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-.article-content a {
-    color: #2196F3;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-.article-content a:hover {
-    color: #1565C0;
+    line-height: 1.6;
 }
 
-/* Footer Styles (Logo Removed) */
-.site-footer {
-    background: #4FC3F7; /* Softer, attractive light blue for footer to match header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #007bff; /* Default blue for Boy */
     color: white;
-    padding: 20px 40px;
-    text-align: center;
-    margin-top: 20px;
-    border-radius: 15px 15px 0 0;
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.footer-links {
+header.girl {
+    background-color: #ff69b4; /* Pink for Girl */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo i {
+    margin-right: 8px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #e0e0e0;
+}
+
+.saved-names {
+    font-size: 16px;
+}
+
+.saved-names i {
+    color: #ff4d4d;
+    margin-right: 5px;
+}
+
+main {
+    display: flex;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro, .generator, .results {
+    flex: 3;
+    margin-right: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dog-illustrations {
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #666;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+h2.girl {
+    color: #ff69b4;
+    border-bottom: 2px solid #ff69b4;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.gender-selection {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
-.footer-links a {
-    color: white;
-    text-decoration: none;
+.gender-selection button {
+    padding: 12px 30px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 25px;
     font-size: 16px;
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
-.footer-links a:hover {
-    color: #e3f2fd; /* Lighter blue on hover */
-    transform: translateY(-2px); /* Slight lift on hover */
+#boyBtn {
+    background-color: #007bff;
+    color: white;
+}
+
+#girlBtn {
+    background-color: #ff69b4;
+    color: white;
+}
+
+.gender-selection button.active {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.name-styles, .name-themes {
+    flex: 1;
+    margin: 0 15px;
+}
+
+.name-styles h3, .name-themes h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 8px 0;
+    font-size: 16px;
+    color: #444;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+#findBtn {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 40px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+#findBtn.girl {
+    background-color: #ff69b4;
+}
+
+#findBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#findBtn i {
+    margin-right: 8px;
+}
+
+aside {
+    flex: 1;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+aside h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    margin: 10px 0;
+}
+
+aside ul li a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+aside ul li a:hover {
+    color: #ff69b4;
+}
+
+.names-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.names-list label {
+    background: #f1f3f5;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.names-list label:hover {
+    background: #e9ecef;
+}
+
+footer {
+    background-color: #f1f3f5;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #dee2e6;
+    margin-top: 40px;
+}
+
+.footer-links a, .social-icons a, .footer-info a {
+    margin: 0 15px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover, .footer-info a:hover {
+    color: #ff69b4;
+}
+
+.social-icons {
+    margin: 15px 0;
+}
+
+.social-icons a {
+    font-size: 20px;
+    color: #666;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+.footer-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .intro, .generator, .results {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    aside {
+        margin-top: 20px;
+    }
+
+    .options {
+        flex-direction: column;
+    }
+
+    .name-styles, .name-themes {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin: 10px 0;
+    }
+
+    .saved-names {
+        margin-top: 10px;
+    }
 }
