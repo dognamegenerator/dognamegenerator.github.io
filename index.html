@@ -33,52 +33,75 @@
         </div>
     </header>
 
-    <main>
-        <section class="intro">
-            <div class="dog-illustrations">
-                <p>Charlie | Scout | Rocky | Luna | Toby | Piper</p>
-                <!-- Add dog images here if you have them -->
+    <main class="main-with-ads">
+        <aside class="ad-left">
+            <!-- Left Side Ad Container -->
+            <div class="ad-container">
+                <p>Left Side Ad Placeholder (300x600)</p>
+                <!-- Add your ad code here -->
             </div>
-            <h1>Hello! Welcome to Dog Name Generator</h1>
-            <p>A fun and easy-to-use resource to help you find the perfect dog name!</p>
-            <p>Our Dog Name Generator lets you pick a gender, choose the style and theme of names you like, and generates a list of amazing names for your pup. Let’s get started!</p>
-        </section>
+        </aside>
+        <section class="content">
+            <section class="intro">
+                <div class="dog-illustrations">
+                    <p>Charlie | Scout | Rocky | Luna | Toby | Piper</p>
+                    <!-- Add dog images here if you have them -->
+                </div>
+                <h1>Hello! Welcome to Dog Name Generator</h1>
+                <p>A fun and easy-to-use resource to help you find the perfect dog name!</p>
+                <p>Our Dog Name Generator lets you pick a gender, choose the style and theme of names you like, and generates a list of amazing names for your pup. Let’s get started!</p>
+            </section>
 
-        <section class="generator">
-            <h2><i class="fas fa-bone"></i> Dog Name Generator Tool</h2>
-            <div class="step">
-                <h3>Step 1: Choose Your Dog's Gender</h3>
-                <div class="gender-selection">
-                    <button onclick="selectGender('boy')" id="boyBtn" class="active">Boy</button>
-                    <button onclick="selectGender('girl')" id="girlBtn">Girl</button>
-                </div>
-            </div>
-            <div class="step">
-                <h3>Step 2: Select Name Styles and Themes</h3>
-                <div class="options">
-                    <div class="name-styles">
-                        <h4>Name Styles</h4>
-                        <label><input type="checkbox" value="friendly"> Friendly</label>
-                        <label><input type="checkbox" value="cute"> Cute</label>
-                        <label><input type="checkbox" value="tough"> Tough</label>
-                        <label><input type="checkbox" value="international"> International</label>
-                        <label><input type="checkbox" value="elegant"> Elegant</label>
-                        <label><input type="checkbox" value="classic"> Classic</label>
-                        <label><input type="checkbox" value="funny"> Funny</label>
-                        <label><input type="checkbox" value="general"> General</label>
-                    </div>
-                    <div class="name-themes">
-                        <h4>Name Themes</h4>
-                        <label><input type="checkbox" value="funny"> Funny</label>
-                        <label><input type="checkbox" value="sporty"> Sporty</label>
+            <section class="generator">
+                <h2><i class="fas fa-bone"></i> Dog Name Generator Tool</h2>
+                <div class="step">
+                    <h3>Step 1: Choose Your Dog's Gender</h3>
+                    <div class="gender-selection">
+                        <button onclick="selectGender('boy')" id="boyBtn" class="active">Boy</button>
+                        <button onclick="selectGender('girl')" id="girlBtn">Girl</button>
                     </div>
                 </div>
-            </div>
-            <div class="step">
-                <h3>Step 3: Generate Names!</h3>
-                <button onclick="generateNames()" id="findBtn"><i class="fas fa-paw"></i> Find a Name</button>
-            </div>
+                <div class="step">
+                    <h3>Step 2: Select Name Styles and Themes</h3>
+                    <div class="options">
+                        <div class="name-styles">
+                            <h4>Name Styles</h4>
+                            <label><input type="checkbox" value="friendly"> Friendly</label>
+                            <label><input type="checkbox" value="cute"> Cute</label>
+                            <label><input type="checkbox" value="tough"> Tough</label>
+                            <label><input type="checkbox" value="international"> International</label>
+                            <label><input type="checkbox" value="elegant"> Elegant</label>
+                            <label><input type="checkbox" value="classic"> Classic</label>
+                            <label><input type="checkbox" value="funny"> Funny</label>
+                            <label><input type="checkbox" value="general"> General</label>
+                        </div>
+                        <div class="name-themes">
+                            <h4>Name Themes</h4>
+                            <label><input type="checkbox" value="funny"> Funny</label>
+                            <label><input type="checkbox" value="sporty"> Sporty</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <h3>Step 3: Generate Names!</h3>
+                    <button onclick="generateNames()" id="findBtn"><i class="fas fa-paw"></i> Find a Name</button>
+                </div>
+            </section>
+            <section class="banner-ad">
+                <!-- Banner Ad Container -->
+                <div class="ad-container banner">
+                    <p>Banner Ad Placeholder (728x90)</p>
+                    <!-- Add your banner ad code here -->
+                </div>
+            </section>
         </section>
+        <aside class="ad-right">
+            <!-- Right Side Ad Container -->
+            <div class="ad-container">
+                <p>Right Side Ad Placeholder (300x600)</p>
+                <!-- Add your ad code here -->
+            </div>
+        </aside>
     </main>
 
     <footer>
@@ -86,7 +109,7 @@
             <a href="index.html">Dog Name Generator</a>
             <a href="breed-selector.html">Breed Selector</a>
             <a href="saved-names.html">Saved Names</a>
-            <a href="#">Contact</a>
+            <a href="contact.html">Contact</a>
         </div>
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -96,7 +119,7 @@
             <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
         <div class="footer-info">
-            <p>© 2025 Dog Name Generator • <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a> • Have a cat? Check out our site <a href="#">Find Cat Names</a></p>
+            <p>© 2025 Dog Name Generator • <a href="privacy-policy.html">Privacy Policy</a> • <a href="terms-of-service.html">Terms of Service</a> • Have a cat? Check out our site <a href="#">Find Cat Names</a></p>
             <p>11500 Wayzata Blvd. #1220, Minnetonka, MN, 55305</p>
         </div>
     </footer>
