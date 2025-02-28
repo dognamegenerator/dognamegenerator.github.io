@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Dog's Name - Find the Perfect Name for Your Pup</title>
+    <title>Breed Selector - Dog Name Generator</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header id="header">
         <div class="logo">
-            <i class="fas fa-paw"></i> My Dog's Name
+            <i class="fas fa-paw"></i> Dog Name Generator
         </div>
         <nav>
-            <a href="#">Dog Names</a>
-            <a href="#">Breed Selector</a>
-            <a href="#">Store</a>
+            <a href="index.html">Dog Name Generator</a>
         </nav>
         <div class="saved-names">
             <i class="fas fa-heart"></i> My Names: <span id="savedCount">0</span>
@@ -23,63 +21,46 @@
     </header>
 
     <main>
-        <section class="intro">
-            <div class="dog-illustrations">
-                <p>Charlie | Scout | Rocky | Luna | Toby | Piper</p>
-                <!-- Add dog images here if you have them -->
-            </div>
-            <h1>Hello! Welcome to My Dog’s Name</h1>
-            <p>A fun and easy-to-use resource to help you find the perfect dog name!</p>
-            <p>Using our dog name generator is simple. First, pick the gender and style of names that you’d like. Do you prefer cute puppy names, elegant names that sound refined, or classic dog names like Rover and Fido? Next, click the button and we’ll generate a list of awesome options.</p>
-        </section>
-
-        <section class="generator">
-            <h2>Dog Name Generator</h2>
-            <div class="gender-selection">
-                <button onclick="selectGender('boy')" id="boyBtn" class="active">Boy</button>
-                <button onclick="selectGender('girl')" id="girlBtn">Girl</button>
-            </div>
-            <div class="options">
-                <div class="name-styles">
-                    <h3>Name Styles</h3>
-                    <label><input type="checkbox" value="friendly"> Friendly</label>
-                    <label><input type="checkbox" value="cute"> Cute</label>
-                    <label><input type="checkbox" value="tough"> Tough</label>
-                    <label><input type="checkbox" value="international"> International</label>
-                    <label><input type="checkbox" value="elegant"> Elegant</label>
-                    <label><input type="checkbox" value="classic"> Classic</label>
-                    <label><input type="checkbox" value="funny"> Funny</label>
-                    <label><input type="checkbox" value="general"> General</label>
+        <section class="breed-selector">
+            <h1>Find Your Perfect Dog Breed</h1>
+            <p>Answer a few questions to discover the best dog breed for your lifestyle!</p>
+            <div class="questions">
+                <div class="question">
+                    <h3>What size dog are you looking for?</h3>
+                    <select id="size">
+                        <option value="">Select Size</option>
+                        <option value="small">Small (Under 20 lbs)</option>
+                        <option value="medium">Medium (20-50 lbs)</option>
+                        <option value="large">Large (Over 50 lbs)</option>
+                    </select>
                 </div>
-                <div class="name-themes">
-                    <h3>Name Themes</h3>
-                    <label><input type="checkbox" value="funny"> Funny</label>
-                    <label><input type="checkbox" value="sporty"> Sporty</label>
+                <div class="question">
+                    <h3>How active is your lifestyle?</h3>
+                    <select id="activity">
+                        <option value="">Select Activity Level</option>
+                        <option value="low">Low (Relaxed, short walks)</option>
+                        <option value="medium">Medium (Daily walks, some play)</option>
+                        <option value="high">High (Running, hiking, very active)</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <h3>Do you have kids or other pets?</h3>
+                    <select id="family">
+                        <option value="">Select Family Situation</option>
+                        <option value="yes">Yes, I have kids/pets</option>
+                        <option value="no">No, I don’t</option>
+                    </select>
                 </div>
             </div>
-            <button onclick="generateNames()" id="findBtn"><i class="fas fa-paw"></i> Find a Name</button>
+            <button onclick="findBreed()" id="findBreedBtn"><i class="fas fa-paw"></i> Find My Breed</button>
+            <div class="breed-result" id="breedResult"></div>
         </section>
-
-        <aside>
-            <h3>Favorite Categories</h3>
-            <ul>
-                <li><a href="#">Female Dog Names</a></li>
-                <li><a href="#">Cute Dog Names</a></li>
-                <li><a href="#">TV & Movie Puppy Names</a></li>
-                <li><a href="#">Unique Puppy Names</a></li>
-                <li><a href="#">Male Dog Names</a></li>
-                <li><a href="#">Funny Dog Names</a></li>
-                <li><a href="#">Tough Dog Names</a></li>
-                <li><a href="#">Geeky Names</a></li>
-                <li><a href="#">Sports Dog Names</a></li>
-            </ul>
-        </aside>
     </main>
 
     <footer>
         <div class="footer-links">
-            <a href="#">Dog Names</a>
-            <a href="#">Breed Selector</a>
+            <a href="index.html">Dog Name Generator</a>
+            <a href="breed-selector.html">Breed Selector</a>
             <a href="#">Saved Names</a>
             <a href="#">Contact</a>
         </div>
@@ -91,7 +72,7 @@
             <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
         <div class="footer-info">
-            <p>© 2013-2025 My Dog’s Name. All Rights Reserved. • <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a> • Have a cat? Check out our site <a href="#">Find Cat Names</a></p>
+            <p>© 2025 Dog Name Generator • <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a> • Have a cat? Check out our site <a href="#">Find Cat Names</a></p>
             <p>11500 Wayzata Blvd. #1220, Minnetonka, MN, 55305</p>
         </div>
     </footer>
