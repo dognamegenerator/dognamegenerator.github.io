@@ -18,7 +18,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 10px 0; /* Reduced padding for mobile */
+    padding: 10px 0;
 }
 
 header.girl {
@@ -30,7 +30,7 @@ header.girl {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 0 15px; /* Reduced padding for mobile */
+    padding: 0 15px;
 }
 
 .logo {
@@ -43,9 +43,15 @@ header.girl {
     width: auto;
 }
 
+/* Navigation Wrapper for Hamburger Menu */
+.nav-wrapper {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
 .nav-content {
-    max-width: 900px;
-    margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-grow: 1;
@@ -54,7 +60,7 @@ header.girl {
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px; /* Reduced margin for mobile */
+    margin: 0 15px;
     font-size: 16px;
     font-weight: 500;
     transition: color 0.3s;
@@ -78,7 +84,7 @@ nav a:hover {
 }
 
 .bone-icon {
-    width: 107px;
+    width: 60px;
     height: auto;
 }
 
@@ -104,6 +110,16 @@ nav a:hover {
     font-size: 10px;
     font-weight: 500;
     color: #333;
+}
+
+/* Hamburger Menu Styling */
+.hamburger {
+    display: none; /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 /* Main with Ads Layout */
@@ -425,50 +441,66 @@ footer {
     }
 }
 
-/* Mobile Responsive Header */
+/* Mobile Responsive Header with Hamburger Menu */
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: row; /* Keep the layout horizontal on mobile */
+        flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        padding: 5px 10px; /* Further reduced padding for mobile */
+        padding: 5px 10px;
     }
 
     .logo {
-        margin: 0; /* Remove margin to align with edge */
-    }
-
-    .logo-image {
-        height: 30px; /* Reduced logo size for mobile */
-    }
-
-    .nav-content {
-        display: flex;
-        flex-direction: row; /* Keep navigation links horizontal */
-        justify-content: center;
-        flex-grow: 1;
         margin: 0;
     }
 
+    .logo-image {
+        height: 30px;
+    }
+
+    /* Hamburger Menu Styling for Mobile */
+    .hamburger {
+        display: block; /* Show hamburger menu on mobile */
+        font-size: 24px;
+    }
+
+    .nav-content {
+        display: none; /* Hidden by default on mobile */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #007bff;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    .nav-content.active {
+        display: flex; /* Show when active class is added */
+    }
+
     nav a {
-        margin: 0 10px; /* Reduced margin for mobile */
-        font-size: 14px; /* Reduced font size for mobile */
+        margin: 10px 0;
+        font-size: 16px;
     }
 
     .saved-names {
-        margin: 0; /* Remove margin to align with edge */
+        margin: 0;
     }
 
     .bone-icon {
-        width: 88px; /* Reduced bone icon size for mobile */
+        width: 40px;
     }
 
     .saved-names-text #savedCount {
-        font-size: 14px; /* Reduced font size for mobile */
+        font-size: 14px;
     }
 
     .saved-names-text .saved-text {
-        font-size: 8px; /* Reduced font size for mobile */
+        font-size: 8px;
     }
 
     /* Adjust main content for mobile */
@@ -493,7 +525,7 @@ footer {
     .gender-selection button {
         padding: 12px 30px;
         margin: 0 10px;
-        font-size: 16px; /* Reduced button font size for mobile */
+        font-size: 16px;
     }
 
     h1 {
@@ -510,7 +542,7 @@ footer {
 
     .ad-container.banner {
         width: 100%;
-        max-width: 468px; /* Adjust banner ad size for smaller screens */
-        height: 60px; /* Adjust banner ad size for smaller screens */
+        max-width: 468px;
+        height: 60px;
     }
 }
