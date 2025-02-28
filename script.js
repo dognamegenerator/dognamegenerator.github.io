@@ -13,6 +13,11 @@ function generateNames() {
     const styles = Array.from(document.querySelectorAll('.name-styles input:checked')).map(input => input.value);
     const themes = Array.from(document.querySelectorAll('.name-themes input:checked')).map(input => input.value);
 
+    if (styles.length === 0 && themes.length === 0) {
+        alert("Please select at least one name style or theme to generate names!");
+        return;
+    }
+
     // Sample names database
     const names = {
         boy: {
@@ -52,6 +57,10 @@ function generateNames() {
             selectedNames = selectedNames.concat(names[selectedGender][theme + "Theme"]);
         }
     });
+
+    // Remove duplicates and shuffle the array
+    selectedNames = [...new Set(selectedNames)];
+    selectedNames.sort(() => Math.random() - 0.5);
 
     localStorage.setItem("generatedNames", JSON.stringify(selectedNames));
     localStorage.setItem("gender", selectedGender);
