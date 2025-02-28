@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background-color: #007bff; /* Default blue for Boy */
+    background-color: #007bff;
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -22,26 +22,49 @@ header {
 }
 
 header.girl {
-    background-color: #ff69b4; /* Pink for Girl */
+    background-color: #ff69b4;
 }
 
 .header-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: 900px; /* Matches the main content width */
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.logo {
-    font-size: 26px;
-    font-weight: 600;
+.saved-names {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
 }
 
-.logo i {
-    margin-right: 10px;
-    color: #ffd700;
+.saved-names-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.bone-icon {
+    width: 60px;
+    height: auto;
+}
+
+.saved-names-container #savedCount {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.saved-text {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 nav {
@@ -63,23 +86,13 @@ nav a:hover {
     color: #ffd700;
 }
 
-.saved-names {
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.saved-names i {
-    color: #ff4d4d;
-    margin-right: 8px;
-}
-
 main {
     max-width: 900px;
     margin: 0 auto;
     padding: 50px 20px;
 }
 
-.intro, .generator, .results, .breed-selector {
+.intro, .generator, .results, .breed-selector, .saved-names-section {
     background: white;
     padding: 40px;
     border-radius: 15px;
@@ -349,8 +362,11 @@ footer {
         padding: 15px 20px;
     }
 
+    .saved-names {
+        margin-bottom: 15px;
+    }
+
     nav {
-        margin: 15px 0;
         flex-direction: column;
     }
 
@@ -358,15 +374,11 @@ footer {
         margin: 10px 0;
     }
 
-    .saved-names {
-        margin-top: 10px;
-    }
-
     main {
         padding: 30px 15px;
     }
 
-    .intro, .generator, .results, .breed-selector {
+    .intro, .generator, .results, .breed-selector, .saved-names-section {
         padding: 25px;
     }
 
