@@ -28,6 +28,7 @@ header.girl {
 .header-content {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Adjusted to place "My Names" on the right */
     max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
@@ -47,7 +48,7 @@ header.girl {
 }
 
 .bone-icon {
-    width: 108px;
+    width: 60px;
     height: auto;
 }
 
@@ -371,7 +372,7 @@ footer {
     }
 
     .saved-names {
-        margin-bottom: 15px;
+        margin-top: 15px;
     }
 
     nav {
