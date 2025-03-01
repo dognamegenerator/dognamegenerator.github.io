@@ -302,8 +302,12 @@ label:hover {
     color: #007bff;
 }
 
+/* ...previous styles... */
+
 #findBtn, #findBreedBtn, #submitBtn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 auto;
     padding: 18px 60px;
     font-size: 18px;
@@ -328,10 +332,20 @@ label:hover {
     margin-right: 10px;
 }
 
+.spinner {
+    display: none; /* Hidden by default */
+    margin-left: 10px;
+}
+
+#submitBtn.loading .spinner {
+    display: inline-block; /* Show spinner when loading class is applied */
+}
+
 .breed-selector .questions {
     margin-bottom: 30px;
 }
 
+/* ...remaining styles... */
 .question {
     margin-bottom: 25px;
     text-align: center;
