@@ -39,7 +39,7 @@ header.girl {
 }
 
 .logo-image {
-    height: 95px;
+    height: 40px;
     width: auto;
 }
 
@@ -84,7 +84,7 @@ nav a:hover {
 }
 
 .bone-icon {
-    width: 108px;
+    width: 60px;
     height: auto;
 }
 
@@ -302,7 +302,7 @@ label:hover {
     color: #007bff;
 }
 
-#findBtn, #findBreedBtn {
+#findBtn, #findBreedBtn, #submitBtn {
     display: block;
     margin: 0 auto;
     padding: 18px 60px;
@@ -315,16 +315,16 @@ label:hover {
     transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
 }
 
-#findBtn.girl, #findBreedBtn.girl {
+#findBtn.girl, #findBreedBtn.girl, #submitBtn.girl {
     background-color: #ff69b4;
 }
 
-#findBtn:hover, #findBreedBtn:hover {
+#findBtn:hover, #findBreedBtn:hover, #submitBtn:hover {
     transform: scale(1.05);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-#findBtn i, #findBreedBtn i {
+#findBtn i, #findBreedBtn i, #submitBtn i {
     margin-right: 10px;
 }
 
@@ -388,6 +388,123 @@ select:focus {
 .names-list label:hover {
     background: #e9ecef;
     transform: scale(1.02);
+}
+
+/* Contact Form Styles */
+.contact-section {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    padding: 50px 20px;
+    border-radius: 15px;
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact-form {
+    position: relative;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group label .required {
+    color: #ff4d4d;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    transform: scale(1.01);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* reCAPTCHA Styling */
+.g-recaptcha {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Form Message Styling */
+.form-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    opacity: 1;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    opacity: 1;
+}
+
+/* Loading Spinner */
+#submitBtn.loading {
+    position: relative;
+    pointer-events: none;
+    background-color: #cccccc;
+}
+
+#submitBtn.loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #fff;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
 }
 
 footer {
@@ -455,7 +572,7 @@ footer {
     }
 
     .logo-image {
-        height: 70px;
+        height: 30px;
     }
 
     /* Hamburger Menu Styling for Mobile */
@@ -492,7 +609,7 @@ footer {
     }
 
     .bone-icon {
-        width: 90px;
+        width: 40px;
     }
 
     .saved-names-text #savedCount {
@@ -508,7 +625,7 @@ footer {
         padding: 30px 15px;
     }
 
-    .intro, .generator, .results, .breed-selector, .saved-names-section {
+    .intro, .generator, .results, .breed-selector, .saved-names-section, .contact-section {
         padding: 25px;
     }
 
@@ -544,5 +661,23 @@ footer {
         width: 100%;
         max-width: 468px;
         height: 60px;
+    }
+
+    /* Adjust Contact Form for Mobile */
+    .contact-section {
+        padding: 30px 15px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    #contact-form {
+        padding: 0 10px;
+    }
+
+    #submitBtn {
+        padding: 14px 40px;
+        font-size: 16px;
     }
 }
