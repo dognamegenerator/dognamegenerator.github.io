@@ -332,13 +332,21 @@ label:hover {
     margin-right: 10px;
 }
 
+/* Ensure no browser-default spinner appears */
+button[type="submit"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Spinner styling */
 .spinner {
-    display: none; /* Hidden by default */
+    display: none;
     margin-left: 10px;
 }
 
 #submitBtn.loading .spinner {
-    display: inline-block; /* Show spinner when loading class is applied */
+    display: inline-block;
 }
 
 .breed-selector .questions {
