@@ -6,8 +6,82 @@
     <title>Contact Us - Dog Name Generator</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@3
-00;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Add or override styles here for contact page */
+        .contact-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #contact-page {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        #contact-page h1 {
+            color: #5c6bc0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #contact-page p {
+            margin-bottom: 20px;
+        }
+
+        #contact-page a {
+            color: #5c6bc0;
+            text-decoration: none;
+        }
+
+        #contact-page a:hover {
+            text-decoration: underline;
+        }
+
+        #contact-page form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contact-page label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        #contact-page input[type="text"],
+        #contact-page input[type="email"],
+        #contact-page textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        #contact-page textarea {
+            resize: vertical;
+        }
+
+        #contact-page input[type="submit"] {
+            background-color: #5c6bc0;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact-page input[type="submit"]:hover {
+            background-color: #3f51b5;
+        }
+    </style>
 </head>
 <body>
     <header id="header">
@@ -38,30 +112,29 @@
 
     <main>
         <section class="contact-section">
-            <!-- Add your contact article or form here -->
             <article id="contact-page">
-            <h1>Contact Us</h1>
-            <p>We'd love to hear from you! Whether you have suggestions for new dog name categories, encounter a technical issue, or just want to share a fun story about your new furry friend's name, please don't hesitate to reach out.</p>
-            <p><strong>Email:</strong> <a href="mailto:[Your Email Address]">[Your Email Address]</a></p>
+                <h1>Contact Us</h1>
+                <p>We'd love to hear from you! Whether you have suggestions for new dog name categories, encounter a technical issue, or just want to share a fun story about your new furry friend's name, please don't hesitate to reach out.</p>
+                <p><strong>Email:</strong> <a href="mailto:[Your Email Address]">[Your Email Address]</a></p>
 
-            <form action="[Your Form Action]" method="post">
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
+                <form action="[Your Form Action]" method="post">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
 
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
 
-                <label for="subject">Subject:</label><br>
-                <input type="text" id="subject" name="subject"><br><br>
+                    <label for="subject">Subject:</label><br>
+                    <input type="text" id="subject" name="subject"><br><br>
 
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
 
-                <input type="submit" value="Submit">
-            </form>
+                    <input type="submit" value="Submit">
+                </form>
 
-            <p>We aim to respond to all inquiries within [Number] business days.</p>
-        </article>
+                <p>We aim to respond to all inquiries within [Number] business days.</p>
+            </article>
         </section>
     </main>
 
