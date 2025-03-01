@@ -554,121 +554,95 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Handle contact form submission
-    if (window.location.pathname.includes("contact.html")) {
-        const form = document.getElementById("contact-form");
-        const submitBtn = document.getElementById("submitBtn");
-        const formMessage = document.getElementById("form-message");
+if (window.location.pathname.includes("contact.html")) {
+    const form = document.getElementById("contact-form");
+    const submitBtn = document.getElementById("submitBtn");
+    const formMessage = document.getElementById("form-message");
 
-        // Email validation regex
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Email validation regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        // Reset error messages
-        const resetErrors = () => {
-            document.getElementById("name-error").textContent = "";
-            document.getElementById("email-error").textContent = "";
-            document.getElementById("message-error").textContent = "";
-            formMessage.classList.remove("success", "error");
-            formMessage.style.display = "none";
-            formMessage.textContent = "";
-        };
+    // Reset error messages
+    const resetErrors = () => {
+        document.getElementById("name-error").textContent = "";
+        document.getElementById("email-error").textContent = "";
+        document.getElementById("message-error").textContent = "";
+        formMessage.classList.remove("success", "error");
+        formMessage.style.display = "none";
+        formMessage.textContent = "";
+    };
 
-        // Validate form
-        const validateForm = () => {
-            let isValid = true;
-            resetErrors();
+    // Validate form
+    const validateForm = () => {
+        let isValid = true;
+        resetErrors();
 
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
 
-            if (!name) {
-                document.getElementById("name-error").textContent = "Please enter your name.";
-                isValid = false;
-            }
-
-            if (!email) {
-                document.getElementById("email-error").textContent = "Please enter your email.";
-                isValid = false;
-            } else if (!emailRegex.test(email)) {
-                document.getElementById("email-error").textContent = "Please enter a valid email address.";
-                isValid = false;
-            }
-
-            if (!message) {
-                document.getElementById("message-error").textContent = "Please enter your message.";
-                isValid = false;
-            }
-
-            return isValid;
-        };
-
-        // Handle form submission
-        form.addEventListener("submit", async (e) => {
-            e.preventDefault(); // Prevent default form submission
-
-            if (!validateForm()) {
-                return;
-            }
-
-            // Show loading state
-            submitBtn.classList.add("loading");
-            submitBtn.disabled = true;
-
-            const formData = new FormData(form);
-
-            try {
-                const response = await fetch(form.action, {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        Accept: "application/json"
-                    }
-                });
-
-                if (response.ok) {
-                    // Show success message
-                    formMessage.classList.add("success");
-                    formMessage.textContent = "Thank you for your message! We'll get back to you soon.";
-                    formMessage.style.display = "block";
-                    form.reset(); // Reset the form
-                } else {
-                    throw new Error("Failed to submit the form.");
-                }
-            } catch (error) {
-                // Show error message
-                formMessage.classList.add("error");
-                formMessage.textContent = "Oops! Something went wrong. Please try again later.";
-                formMessage.style.display = "block";
-            } finally {
-                // Hide loading state
-                submitBtn.classList.remove("loading");
-                submitBtn.disabled = false;
-            }
-        });
-    }
-});
-
-function saveName(checkbox) {
-    const name = checkbox.value;
-    if (checkbox.checked) {
-        if (!savedNames.includes(name)) savedNames.push(name);
-    } else {
-        savedNames = savedNames.filter(n => n !== name);
-    }
-    localStorage.setItem("savedNames", JSON.stringify(savedNames));
-    document.getElementById("savedCount").innerText = savedNames.length;
-
-    if (window.location.pathname.includes("saved-names.html")) {
-        const savedNamesList = document.getElementById("savedNamesList");
-        savedNamesList.innerHTML = "";
-        if (savedNames.length === 0) {
-            savedNamesList.innerHTML = "<p>You haven't saved any names yet!</p>";
-        } else {
-            savedNames.forEach(name => {
-                const label = document.createElement("label");
-                label.innerHTML = `<input type="checkbox" value="${name}" onchange="saveName(this)" checked> ${name}`;
-                savedNamesList.appendChild(label);
-            });
+        if (!name) {
+            document.getElementById("name-error").textContent = "Please enter your name.";
+            isValid = false;
         }
-    }
+
+        if (!email) {
+            document.getElementById("email-error").textContent = "Please enter your email.";
+            isValid = false;
+        } else if (!emailRegex.test(email)) {
+            document.getElementById("email-error").textContent = "Please enter a valid email address.";
+            isValid = false;
+        }
+
+        if (!message) {
+            document.getElementById("message-error").textContent = "Please enter your message.";
+            isValid = false;
+        }
+
+        return isValid;
+    };
+
+    // Handle form submission
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault(); // Prevent default form submission
+
+        if (!validateForm()) {
+            return;
+        }
+
+        // Show loading state
+        submitBtn.classList.add("loading");
+        submitBtn.disabled = true;
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: {
+                    Accept: "application/json"
+                }
+            });
+
+            if (response.ok) {
+                // Show success message
+                formMessage.classList.add("success");
+                formMessage.textContent = "Thank you for your message! We'll get back to you soon.";
+                formMessage.style.display = "block";
+                form.reset(); // Reset the form
+            } else {
+                throw new Error("Failed to submit the form.");
+            }
+        } catch (error) {
+            // Show error message
+            formMessage.classList.add("error");
+            formMessage.textContent = "Oops! Something went wrong. Please try again later.";
+            formMessage.style.display = "block";
+        } finally {
+            // Hide loading state
+            submitBtn.classList.remove("loading");
+            submitBtn.disabled = false;
+        }
+    });
 }
