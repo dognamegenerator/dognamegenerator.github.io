@@ -271,7 +271,7 @@ function generateNames() {
                 "Eowyn", "Arwen", "Galadriel", "Legolas", "Sigrid"
             ],
             vintageTheme: [
-                "Elsie", "Mabel", "Nellie", "Dottie", "Bessie", "Flossie", "Hattie", "Ida", " Josie", "Kitty",
+                "Elsie", "Mabel", "Nellie", "Dottie", "Bessie", "Flossie", "Hattie", "Ida", "Josie", "Kitty",
                 "Lottie", "Minnie", "Nora", "Opal", "Pearl", "Queenie", "Ruthie", "Sadie", "Tillie", "Vera",
                 "Winnie", "Agnes", "Bea", "Clara", "Dora", "Edith", "Fanny", "Greta", "Hilda", "Irene",
                 "June", "Kit", "Lila", "Marge", "Nan", "Olive", "Polly", "Rita", "Stella", "Thelma",
@@ -397,6 +397,92 @@ function findBreed() {
                     "Tibetan Terrier", "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog",
                     "Australian Kelpie", "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter",
                     "Field Spaniel", "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever"
+                ]
+            }
+        },
+        medium: {
+            low: {
+                yes: [
+                    "Beagle", "Cocker Spaniel", "Springer Spaniel", "Shetland Sheepdog", "Brittany",
+                    "English Cocker Spaniel", "Shiba Inu", "Whippet", "Miniature American Shepherd", "Border Collie",
+                    "Australian Terrier", "Basenji", "Bedlington Terrier", "Bichon Frise", "Boston Terrier",
+                    "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund", "French Bulldog",
+                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
+                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
+                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Pug", "Scottish Terrier",
+                    "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier",
+                    "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie",
+                    "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel",
+                    "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel"
+                ],
+                no: [
+                    "Dachshund", "Beagle", "Cocker Spaniel", "Springer Spaniel", "Shetland Sheepdog",
+                    "Brittany", "English Cocker Spaniel", "Shiba Inu", "Whippet", "Miniature American Shepherd",
+                    "Border Collie", "Australian Terrier", "Basenji", "Bedlington Terrier", "Bichon Frise",
+                    "Boston Terrier", "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "French Bulldog",
+                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
+                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
+                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Pug", "Scottish Terrier",
+                    "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier",
+                    "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie",
+                    "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel",
+                    "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel"
+                ]
+            },
+            medium: {
+                yes: [
+                    "Beagle", "Cocker Spaniel", "Springer Spaniel", "Shetland Sheepdog", "Brittany",
+                    "English Cocker Spaniel", "Shiba Inu", "Whippet", "Miniature American Shepherd", "Border Collie",
+                    "Australian Terrier", "Basenji", "Bedlington Terrier", "Bichon Frise", "Boston Terrier",
+                    "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund", "French Bulldog",
+                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
+                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
+                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Pug", "Scottish Terrier",
+                    "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier",
+                    "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie",
+                    "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel",
+                    "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel"
+                ],
+                no: [
+                    "Australian Cattle Dog", "Beagle", "Cocker Spaniel", "Springer Spaniel", "Shetland Sheepdog",
+                    "Brittany", "English Cocker Spaniel", "Shiba Inu", "Whippet", "Miniature American Shepherd",
+                    "Border Collie", "Australian Terrier", "Basenji", "Bedlington Terrier", "Bichon Frise",
+                    "Boston Terrier", "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund",
+                    "French Bulldog", "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond",
+                    "Kerry Blue Terrier", "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher",
+                    "Miniature Schnauzer", "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Pug",
+                    "Scottish Terrier", "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier",
+                    "Tibetan Terrier", "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog",
+                    "Australian Kelpie", "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter",
+                    "Field Spaniel", "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever"
+                ]
+            },
+            high: {
+                yes: [
+                    "Australian Cattle Dog", "Border Collie", "Beagle", "Cocker Spaniel", "Springer Spaniel",
+                    "Shetland Sheepdog", "Brittany", "English Cocker Spaniel", "Shiba Inu", "Whippet",
+                    "Miniature American Shepherd", "Australian Terrier", "Basenji", "Bedlington Terrier", "Boston Terrier",
+                    "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund", "French Bulldog",
+                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
+                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
+                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Scottish Terrier", "Sealyham Terrier",
+                    "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier", "Welsh Terrier",
+                    "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie", "Boykin Spaniel",
+                    "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel", "Gordon Setter",
+                    "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel", "Vizsla"
+                ],
+                no: [
+                    "Australian Cattle Dog", "Border Collie", "Beagle", "Cocker Spaniel", "Springer Spaniel",
+                    "Shetland Sheepdog", "Brittany", "English Cocker Spaniel", "Shiba Inu", "Whippet",
+                    "Miniature American Shepherd", "Australian Terrier", "Basenji", "Bedlington Terrier", "Boston Terrier",
+                    "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund", "French Bulldog",
+                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
+                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
+                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Scottish Terrier", "Sealyham Terrier",
+                    "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier", "Welsh Terrier",
+                    "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie", "Boykin Spaniel",
+                    "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel", "Gordon Setter",
+                    "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel", "Vizsla"
                 ]
             }
         },
@@ -554,95 +640,121 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Handle contact form submission
-if (window.location.pathname.includes("contact.html")) {
-    const form = document.getElementById("contact-form");
-    const submitBtn = document.getElementById("submitBtn");
-    const formMessage = document.getElementById("form-message");
+    if (window.location.pathname.includes("contact.html")) {
+        const form = document.getElementById("contact-form");
+        const submitBtn = document.getElementById("submitBtn");
+        const formMessage = document.getElementById("form-message");
 
-    // Email validation regex
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // Email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Reset error messages
-    const resetErrors = () => {
-        document.getElementById("name-error").textContent = "";
-        document.getElementById("email-error").textContent = "";
-        document.getElementById("message-error").textContent = "";
-        formMessage.classList.remove("success", "error");
-        formMessage.style.display = "none";
-        formMessage.textContent = "";
-    };
+        // Reset error messages
+        const resetErrors = () => {
+            document.getElementById("name-error").textContent = "";
+            document.getElementById("email-error").textContent = "";
+            document.getElementById("message-error").textContent = "";
+            formMessage.classList.remove("success", "error");
+            formMessage.style.display = "none";
+            formMessage.textContent = "";
+        };
 
-    // Validate form
-    const validateForm = () => {
-        let isValid = true;
-        resetErrors();
+        // Validate form
+        const validateForm = () => {
+            let isValid = true;
+            resetErrors();
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
 
-        if (!name) {
-            document.getElementById("name-error").textContent = "Please enter your name.";
-            isValid = false;
-        }
-
-        if (!email) {
-            document.getElementById("email-error").textContent = "Please enter your email.";
-            isValid = false;
-        } else if (!emailRegex.test(email)) {
-            document.getElementById("email-error").textContent = "Please enter a valid email address.";
-            isValid = false;
-        }
-
-        if (!message) {
-            document.getElementById("message-error").textContent = "Please enter your message.";
-            isValid = false;
-        }
-
-        return isValid;
-    };
-
-    // Handle form submission
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault(); // Prevent default form submission
-
-        if (!validateForm()) {
-            return;
-        }
-
-        // Show loading state
-        submitBtn.classList.add("loading");
-        submitBtn.disabled = true;
-
-        const formData = new FormData(form);
-
-        try {
-            const response = await fetch(form.action, {
-                method: "POST",
-                body: formData,
-                headers: {
-                    Accept: "application/json"
-                }
-            });
-
-            if (response.ok) {
-                // Show success message
-                formMessage.classList.add("success");
-                formMessage.textContent = "Thank you for your message! We'll get back to you soon.";
-                formMessage.style.display = "block";
-                form.reset(); // Reset the form
-            } else {
-                throw new Error("Failed to submit the form.");
+            if (!name) {
+                document.getElementById("name-error").textContent = "Please enter your name.";
+                isValid = false;
             }
-        } catch (error) {
-            // Show error message
-            formMessage.classList.add("error");
-            formMessage.textContent = "Oops! Something went wrong. Please try again later.";
-            formMessage.style.display = "block";
-        } finally {
-            // Hide loading state
-            submitBtn.classList.remove("loading");
-            submitBtn.disabled = false;
+
+            if (!email) {
+                document.getElementById("email-error").textContent = "Please enter your email.";
+                isValid = false;
+            } else if (!emailRegex.test(email)) {
+                document.getElementById("email-error").textContent = "Please enter a valid email address.";
+                isValid = false;
+            }
+
+            if (!message) {
+                document.getElementById("message-error").textContent = "Please enter your message.";
+                isValid = false;
+            }
+
+            return isValid;
+        };
+
+        // Handle form submission
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault(); // Prevent default form submission
+
+            if (!validateForm()) {
+                return;
+            }
+
+            // Show loading state
+            submitBtn.classList.add("loading");
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        Accept: "application/json"
+                    }
+                });
+
+                if (response.ok) {
+                    // Show success message
+                    formMessage.classList.add("success");
+                    formMessage.textContent = "Thank you for your message! We'll get back to you soon.";
+                    formMessage.style.display = "block";
+                    form.reset(); // Reset the form
+                } else {
+                    throw new Error("Failed to submit the form.");
+                }
+            } catch (error) {
+                // Show error message
+                formMessage.classList.add("error");
+                formMessage.textContent = "Oops! Something went wrong. Please try again later.";
+                formMessage.style.display = "block";
+            } finally {
+                // Hide loading state
+                submitBtn.classList.remove("loading");
+                submitBtn.disabled = false;
+            }
+        });
+    }
+});
+
+function saveName(checkbox) {
+    const name = checkbox.value;
+    if (checkbox.checked) {
+        if (!savedNames.includes(name)) savedNames.push(name);
+    } else {
+        savedNames = savedNames.filter(n => n !== name);
+    }
+    localStorage.setItem("savedNames", JSON.stringify(savedNames));
+    document.getElementById("savedCount").innerText = savedNames.length;
+
+    if (window.location.pathname.includes("saved-names.html")) {
+        const savedNamesList = document.getElementById("savedNamesList");
+        savedNamesList.innerHTML = "";
+        if (savedNames.length === 0) {
+            savedNamesList.innerHTML = "<p>You haven't saved any names yet!</p>";
+        } else {
+            savedNames.forEach(name => {
+                const label = document.createElement("label");
+                label.innerHTML = `<input type="checkbox" value="${name}" onchange="saveName(this)" checked> ${name}`;
+                savedNamesList.appendChild(label);
+            });
         }
-    });
+    }
 }
