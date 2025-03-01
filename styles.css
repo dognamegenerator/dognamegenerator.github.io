@@ -39,7 +39,7 @@ header.girl {
 }
 
 .logo-image {
-    height: 40px;
+    height: 90px;
     width: auto;
 }
 
@@ -84,7 +84,7 @@ nav a:hover {
 }
 
 .bone-icon {
-    width: 60px;
+    width: 107px;
     height: auto;
 }
 
@@ -614,7 +614,7 @@ footer {
     }
 
     .logo-image {
-        height: 30px;
+        height: 80px;
     }
 
     /* Hamburger Menu Styling for Mobile */
@@ -662,7 +662,7 @@ footer {
     }
 
     .bone-icon {
-        width: 40px;
+        width: 95px;
     }
 
     .saved-names-text #savedCount {
