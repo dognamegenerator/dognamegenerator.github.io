@@ -451,12 +451,7 @@ select:focus {
     resize: vertical;
 }
 
-/* reCAPTCHA Styling */
-.g-recaptcha {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
+
 
 /* Form Message Styling */
 .form-message {
@@ -505,6 +500,9 @@ select:focus {
 @keyframes spin {
     0% { transform: translateY(-50%) rotate(0deg); }
     100% { transform: translateY(-50%) rotate(360deg); }
+}/* Honeypot field styling */
+.honeypot-field {
+    display: none; /* Hidden from users */
 }
 
 footer {
