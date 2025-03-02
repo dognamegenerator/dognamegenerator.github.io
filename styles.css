@@ -111,7 +111,53 @@ nav a:hover {
     font-weight: 500;
     color: #333;
 }
+/* Export Options Styling */
+.export-options {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    margin-bottom: 20px; /* Space below the buttons */
+    margin-top: 20px; /* Space above the buttons, below the header */
+    padding: 0 20px; /* Padding to align with the content */
+}
 
+.export-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin-left: 10px; /* Space between buttons */
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background-color: #007bff; /* Default blue color */
+    border: none;
+    border-radius: 30px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+}
+
+.export-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.export-btn i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .export-options {
+        justify-content: center; /* Center buttons on mobile */
+        padding: 0 15px;
+    }
+
+    .export-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+        margin-left: 5px; /* Reduced space between buttons on mobile */
+    }
+}
 /* Hamburger Menu Styling */
 .hamburger {
     display: none; /* Hidden by default on desktop */
