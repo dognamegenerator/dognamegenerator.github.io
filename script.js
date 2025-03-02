@@ -741,7 +741,6 @@ function exportToExcel() {
 // Continue with the rest of the script.js code (DOMContentLoaded event listener, etc.)
 document.addEventListener("DOMContentLoaded", () => {
     // ... (existing code)
-            });
-        }
-    }
-}
+});
+
+
