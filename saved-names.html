@@ -37,6 +37,16 @@
     </header>
 
     <main>
+        <!-- Export Options Container -->
+        <div class="export-options">
+            <button onclick="exportToExcel()" class="export-btn excel-btn">
+                <i class="fas fa-file-excel"></i> Export as Excel
+            </button>
+            <button onclick="exportToCSV()" class="export-btn csv-btn">
+                <i class="fas fa-file-csv"></i> Export as CSV
+            </button>
+        </div>
+
         <section class="saved-names-section">
             <h1>Your Saved Dog Names</h1>
             <p>Below is the list of names you've saved. Uncheck any name to remove it from your list.</p>
