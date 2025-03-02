@@ -400,92 +400,6 @@ function findBreed() {
                 ]
             }
         },
-        medium: {
-            low: {
-                yes: [
-                    "Beagle", "Cocker Spaniel", "Springer Spaniel", "Shetland Sheepdog", "Brittany",
-                    "English Cocker Spaniel", "Shiba Inu", "Whippet", "Miniature American Shepherd", "Border Collie",
-                    "Australian Terrier", "Basenji", "Bedlington Terrier", "Bichon Frise", "Boston Terrier",
-                    "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund", "French Bulldog",
-                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
-                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
-                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Pug", "Scottish Terrier",
-                    "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier",
-                    "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie",
-                    "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel",
-                    "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel"
-                ],
-                no: [
-                    "Dachshund", "Beagle", "Cocker Spaniel", "Springer Spaniel", "Shetland Sheepdog",
-                    "Brittany", "English Cocker Spaniel", "Shiba Inu", "Whippet", "Miniature American Shepherd",
-                    "Border Collie", "Australian Terrier", "Basenji", "Bedlington Terrier", "Bichon Frise",
-                    "Boston Terrier", "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "French Bulldog",
-                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
-                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
-                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Pug", "Scottish Terrier",
-                    "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier",
-                    "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie",
-                    "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel",
-                    "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel"
-                ]
-            },
-            medium: {
-                yes: [
-                    "Beagle", "Cocker Spaniel", "Springer Spaniel", "Shetland Sheepdog", "Brittany",
-                    "English Cocker Spaniel", "Shiba Inu", "Whippet", "Miniature American Shepherd", "Border Collie",
-                    "Australian Terrier", "Basenji", "Bedlington Terrier", "Bichon Frise", "Boston Terrier",
-                    "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund", "French Bulldog",
-                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
-                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
-                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Pug", "Scottish Terrier",
-                    "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier",
-                    "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie",
-                    "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel",
-                    "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel"
-                ],
-                no: [
-                    "Australian Cattle Dog", "Beagle", "Cocker Spaniel", "Springer Spaniel", "Shetland Sheepdog",
-                    "Brittany", "English Cocker Spaniel", "Shiba Inu", "Whippet", "Miniature American Shepherd",
-                    "Border Collie", "Australian Terrier", "Basenji", "Bedlington Terrier", "Bichon Frise",
-                    "Boston Terrier", "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund",
-                    "French Bulldog", "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond",
-                    "Kerry Blue Terrier", "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher",
-                    "Miniature Schnauzer", "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Pug",
-                    "Scottish Terrier", "Sealyham Terrier", "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier",
-                    "Tibetan Terrier", "Welsh Terrier", "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog",
-                    "Australian Kelpie", "Boykin Spaniel", "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter",
-                    "Field Spaniel", "Gordon Setter", "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever"
-                ]
-            },
-            high: {
-                yes: [
-                    "Australian Cattle Dog", "Border Collie", "Beagle", "Cocker Spaniel", "Springer Spaniel",
-                    "Shetland Sheepdog", "Brittany", "English Cocker Spaniel", "Shiba Inu", "Whippet",
-                    "Miniature American Shepherd", "Australian Terrier", "Basenji", "Bedlington Terrier", "Boston Terrier",
-                    "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund", "French Bulldog",
-                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
-                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
-                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Scottish Terrier", "Sealyham Terrier",
-                    "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier", "Welsh Terrier",
-                    "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie", "Boykin Spaniel",
-                    "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel", "Gordon Setter",
-                    "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel", "Vizsla"
-                ],
-                no: [
-                    "Australian Cattle Dog", "Border Collie", "Beagle", "Cocker Spaniel", "Springer Spaniel",
-                    "Shetland Sheepdog", "Brittany", "English Cocker Spaniel", "Shiba Inu", "Whippet",
-                    "Miniature American Shepherd", "Australian Terrier", "Basenji", "Bedlington Terrier", "Boston Terrier",
-                    "Cairn Terrier", "Cardigan Welsh Corgi", "Clumber Spaniel", "Dachshund", "French Bulldog",
-                    "Havanese", "Irish Terrier", "Japanese Spitz", "Keeshond", "Kerry Blue Terrier",
-                    "Lakeland Terrier", "Lowchen", "Miniature Bull Terrier", "Miniature Pinscher", "Miniature Schnauzer",
-                    "Norfolk Terrier", "Norwich Terrier", "Pembroke Welsh Corgi", "Scottish Terrier", "Sealyham Terrier",
-                    "Silky Terrier", "Skye Terrier", "Soft Coated Wheaten Terrier", "Tibetan Terrier", "Welsh Terrier",
-                    "West Highland White Terrier", "Wire Fox Terrier", "American Eskimo Dog", "Australian Kelpie", "Boykin Spaniel",
-                    "Cesky Terrier", "Dandie Dinmont Terrier", "English Setter", "Field Spaniel", "Gordon Setter",
-                    "Irish Setter", "Irish Water Spaniel", "Nova Scotia Duck Tolling Retriever", "Sussex Spaniel", "Vizsla"
-                ]
-            }
-        },
         large: {
             low: {
                 yes: [
@@ -606,7 +520,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Handle generated names page
+    // Handle generated names page (dog names results)
     if (window.location.pathname.includes("results.html")) {
         const names = JSON.parse(localStorage.getItem("generatedNames")) || [];
         const gender = localStorage.getItem("gender") || "boy";
@@ -637,6 +551,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 savedNamesList.appendChild(label);
             });
         }
+    }
+
+    // Handle cat names page
+    if (window.location.pathname.includes("cat-names.html")) {
+        const catNames = [
+            "Luna", "Milo", "Bella", "Oliver", "Simba", "Nala", "Chloe", "Shadow", "Coco", "Lily",
+            "Max", "Tiger", "Sadie", "Leo", "Zoe", "Jasper", "Misty", "Oscar", "Daisy", "Finn",
+            "Ruby", "Ginger", "Smokey", "Pepper", "Mochi", "Sasha", "Toby", "Willow", "Charlie", "Ivy",
+            "Loki", "Cleo", "Muffin", "Buster", "Hazel", "Rocky", "Ella", "George", "Mimi", "Buddy",
+            "Sophie", "Archie", "Sammy", "Rosie", "Pumpkin", "Oreo", "Violet", "Felix", "Stella", "Jack",
+            "Penny", "Whiskers", "Dusty", "Molly", "Kiki", "Snickers", "Tuna", "Biscuit", "Midnight", "Pippin",
+            "Salem", "Noodle", "Puffy", "Ziggy", "Tinker", "Marble", "Suki", "Rusty", "Fluffy", "Bambi",
+            "Cupcake", "Gizmo", "Nugget", "Skittles", "Button", "Patches", "Snoopy", "Chip", "Twinkle", "Bubbles",
+            "Rolo", "Cinnamon", "Honey", "Freckles", "Caramel", "Snuggle", "Paws", "Whisper", "Dimples", "Spark",
+            "Cuddles", "Toffee", "Truffle", "Pebble", "Smore", "Fizzy", "Glitter", "Pinky", "Sissy", "Marshmallow"
+        ];
+
+        const catNamesList = document.getElementById("catNamesList");
+        catNames.forEach(name => {
+            const label = document.createElement("label");
+            label.innerHTML = `<input type="checkbox" value="${name}" onchange="saveName(this)" ${savedNames.includes(name) ? "checked" : ""}> ${name}`;
+            catNamesList.appendChild(label);
+        });
     }
 
     // Handle contact form submission
