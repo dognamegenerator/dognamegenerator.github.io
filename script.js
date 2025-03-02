@@ -671,6 +671,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+// ... (previous code in script.js, including selectGender, generateNames, findBreed, etc.)
+
 function saveName(checkbox) {
     const name = checkbox.value;
     if (checkbox.checked) {
@@ -695,3 +697,48 @@ function saveName(checkbox) {
         }
     }
 }
+
+// Add the export functions here
+function exportToCSV() {
+    if (savedNames.length === 0) {
+        alert("No names to export! Please save some names first.");
+        return;
+    }
+
+    // Create CSV content
+    const csvContent = "data:text/csv;charset=utf-8," + 
+        "Name\n" + 
+        savedNames.map(name => `"${name}"`).join("\n");
+
+    // Create a downloadable link
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "saved_names.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+function exportToExcel() {
+    if (savedNames.length === 0) {
+        alert("No names to export! Please save some names first.");
+        return;
+    }
+
+    // Create a workbook and worksheet
+    const wb = XLSX.utils.book_new();
+    const wsData = [["Name"], ...savedNames.map(name => [name])];
+    const ws = XLSX.utils.aoa_to_sheet(wsData);
+
+    // Add the worksheet to the workbook
+    XLSX.utils.book_append_sheet(wb, ws, "Saved Names");
+
+    // Export the workbook to an Excel file
+    XLSX.writeFile(wb, "saved_names.xlsx");
+}
+
+// Continue with the rest of the script.js code (DOMContentLoaded event listener, etc.)
+document.addEventListener("DOMContentLoaded", () => {
+    // ... (existing code)
+});
