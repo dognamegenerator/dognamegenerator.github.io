@@ -554,19 +554,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Handle cat names page
-    if (window.location.pathname.includes("cat-names.html")) {
-        const catNames = [
-            "Luna", "Milo", "Bella", "Oliver", "Simba", "Nala", "Chloe", "Shadow", "Coco", "Lily",
-            "Max", "Tiger", "Sadie", "Leo", "Zoe", "Jasper", "Misty", "Oscar", "Daisy", "Finn",
-            "Ruby", "Ginger", "Smokey", "Pepper", "Mochi", "Sasha", "Toby", "Willow", "Charlie", "Ivy",
-            "Loki", "Cleo", "Muffin", "Buster", "Hazel", "Rocky", "Ella", "George", "Mimi", "Buddy",
-            "Sophie", "Archie", "Sammy", "Rosie", "Pumpkin", "Oreo", "Violet", "Felix", "Stella", "Jack",
-            "Penny", "Whiskers", "Dusty", "Molly", "Kiki", "Snickers", "Tuna", "Biscuit", "Midnight", "Pippin",
-            "Salem", "Noodle", "Puffy", "Ziggy", "Tinker", "Marble", "Suki", "Rusty", "Fluffy", "Bambi",
-            "Cupcake", "Gizmo", "Nugget", "Skittles", "Button", "Patches", "Snoopy", "Chip", "Twinkle", "Bubbles",
-            "Rolo", "Cinnamon", "Honey", "Freckles", "Caramel", "Snuggle", "Paws", "Whisper", "Dimples", "Spark",
-            "Cuddles", "Toffee", "Truffle", "Pebble", "Smore", "Fizzy", "Glitter", "Pinky", "Sissy", "Marshmallow"
-        ];
+if (window.location.pathname.includes("cat-names.html")) {
+    const catNames = [
+        "Luna", "Milo", "Bella", "Oliver", "Simba", "Nala", "Chloe", "Shadow", "Coco", "Lily",
+        "Max", "Tiger", "Sadie", "Leo", "Zoe", "Jasper", "Misty", "Oscar", "Daisy", "Finn",
+        "Ruby", "Ginger", "Smokey", "Pepper", "Mochi", "Sasha", "Toby", "Willow", "Charlie", "Ivy",
+        "Loki", "Cleo", "Muffin", "Buster", "Hazel", "Rocky", "Ella", "George", "Mimi", "Buddy",
+        "Sophie", "Archie", "Sammy", "Rosie", "Pumpkin", "Oreo", "Violet", "Felix", "Stella", "Jack",
+        "Penny", "Whiskers", "Dusty", "Molly", "Kiki", "Snickers", "Tuna", "Biscuit", "Midnight", "Pippin",
+        "Salem", "Noodle", "Puffy", "Ziggy", "Tinker", "Marble", "Suki", "Rusty", "Fluffy", "Bambi",
+        "Cupcake", "Gizmo", "Nugget", "Skittles", "Button", "Patches", "Snoopy", "Chip", "Twinkle", "Bubbles",
+        "Rolo", "Cinnamon", "Honey", "Freckles", "Caramel", "Snuggle", "Paws", "Whisper", "Dimples", "Spark",
+        "Cuddles", "Toffee", "Truffle", "Pebble", "Smore", "Fizzy", "Glitter", "Pinky", "Sissy", "Marshmallow",
+        "Waffles", "Tango", "Mango", "Fudge", "Binky", "Poppy", "Socks", "Jinx", "Boo", "Lulu",
+        "Doodle", "Sprinkle", "Taffy", "Munchkin", "Bean", "Pippa", "Nacho", "Raven", "Sunny", "Puddle",
+        "Winky", "Flicker", "Dash", "Momo", "Breeze", "Giggles", "Cricket", "Sable", "Frosty", "Nico",
+        "Plum", "Waldo", "Zippy", "Tulip", "Maple", "Slinky", "Bonbon", "Echo", "Dolly", "Taz",
+        "Spice", "Bloop", "Gus", "Petal", "Mellow", "Soot", "Chai", "Blink", "Lollipop", "Snooze",
+        "Twist", "Glimmer", "Smudge", "Velvet", "Hopper", "Sushi", "Wisp", "Pancake", "Tiffy", "Daze",
+        "Mojo", "Flick", "Drip", "Star", "Blinky", "Churro", "Jelly", "Frost", "Zest", "Dapple",
+        "Glint", "Bumble", "Sooty", "Plush", "Saffron", "Sprout", "Snuffy", "Wriggle", "Toodle", "Scamper",
+        "Fluffball", "Snip", "Twirl", "Gleam", "Snoot", "Wobble", "Dribble", "Splat", "Gobble", "Ripple",
+        "Squeak", "Waddle", "Floop", "Glider", "Snick", "Tangle", "Bop", "Zappy", "Flit", "Puffball",
+        "Skipper", "Gingerbread", "Patter", "Snugglebug", "Squish", "Pawsie", "Tinsel", "Nifty", "Bouncy", "Squiggle",
+        "Ramble", "Dazzle", "Fable", "Gusty", "Pebble", "Dinky", "Waffle", "Blinkie", "Snippy", "Tinkerbell",
+        "Furry", "Puffy", "Winky", "Slinky", "Pippin", "Snugglepaws", "Twistie", "Glimmie", "Flickie", "Snootie",
+        "Wobbler", "Driblet", "Splatter", "Gobbles", "Ripples", "Squeaky", "Waddles", "Floof", "Glide", "Snicker",
+        "Tangles", "Bopper", "Zappie", "Flitter", "Puffie", "Skippy", "Gingie", "Patters", "Snuggles", "Squishy",
+        "Pawpaw", "Tinsels", "Niftie", "Bounce", "Squiggly", "Rambles", "Dazzler", "Fables", "Gustie", "Pebbles",
+        "Dinkie", "Waffie", "Blinker", "Snips", "Tinkles", "Furball", "Puffpuff", "Winkles", "Slinkie", "Pippers",
+        "Snugglepie", "Twister", "Glintie", "Flickers", "Snoots", "Wobbles", "Dribbles", "Splatters", "Gobbler", "Ripplez",
+        "Squeaker", "Waddler", "Floofy", "Gliders", "Snickie", "Tangler", "Boppity", "Zappies", "Flittie", "Puffies",
+        "Skippie", "Gingersnap", "Patterpaws", "Snugglekins", "Squishie", "Pawsies", "Tinseltoes", "Niftier", "Bouncer", "Squiggles",
+        "Rambler", "Dazzlie", "Fablest", "Gusties", "Pebblie", "Dinkles", "Waffler", "Blinkies", "Snippie", "Tinkletoes",
+        "Furballs", "Puffypaws", "Winkie", "Slinkers", "Pippie", "Snugglepuff", "Twisties", "Glimmies", "Flickies", "Snootles",
+        "Wobblie", "Dribblie", "Splatty", "Gobblie", "Ripplet", "Squeakie", "Waddlie", "Floofie", "Glidie", "Snickles",
+        "Tanglie", "Boppies", "Zappier", "Flitties", "Puffster", "Skippies", "Gingerpop", "Patterpie", "Snugglepaws", "Squishies",
+        "Pawsome", "Tinselpie", "Niftiest", "Bouncie", "Squiggler", "Ramblie", "Dazzlest", "Fabler", "Gustier", "Pebblest",
+        "Dinkiest", "Wafflest", "Blinkiest", "Snipster", "Tinklest", "Furballz", "Puffypuff", "Winkiest", "Slinkiest", "Pippiest",
+        "Snugglepiez", "Twistiest", "Glimmiest", "Flickiest", "Snootlest", "Wobbliest", "Dribbliest", "Splattiest", "Gobbliest", "Ripplest",
+        "Squeakiest", "Waddliest", "Floofiest", "Glidiest", "Snicklest", "Tangliest", "Boppiest", "Zappiest", "Flittiest", "Puffiest",
+        "Skippiest", "Gingerest", "Patterpuff", "Snugglepop", "Squishiest", "Pawsiest", "Tinseliest", "Niftiest", "Bounciest", "Squiggliest"
+    ];
 
         const catNamesList = document.getElementById("catNamesList");
         catNames.forEach(name => {
